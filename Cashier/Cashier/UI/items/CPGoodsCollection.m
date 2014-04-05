@@ -68,7 +68,7 @@
     if (self) {
         // Initialization code
         self.goodsList = goods;
-        self.clipsToBounds = YES;
+        //self.clipsToBounds = YES;
         NSArray *letters = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O"];
         
         UIView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(kMarin, 0 , CGRectGetWidth(frame), kLetterSize)];

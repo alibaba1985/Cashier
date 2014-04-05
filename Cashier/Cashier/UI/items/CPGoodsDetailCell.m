@@ -109,19 +109,13 @@
 - (void)touchDownAction:(UIButton *)button
 {
     _bgView.backgroundColor = [UIColor grayColor];
-
     CGPoint originPoint = CGPointMake(CGRectGetMaxX(button.frame), CGRectGetMinY(button.frame));
-    
-    
     CGPoint fromCenter = [button convertPoint:originPoint toView:self.superview.superview.superview];
     CPGoodsCountIndicator *indicator = [[CPGoodsCountIndicator alloc] initWithCenter:fromCenter count:1];
     UIView *ssuperview = [self.superview.superview.superview viewWithTag:10000];
     CGPoint center = ssuperview.center;;
-    
-    [self.superview addSubview:indicator];
+    [self.superview.superview.superview addSubview:indicator];
     [indicator release];
-    
-    
     [indicator moveToCenter:center];
 }
 
