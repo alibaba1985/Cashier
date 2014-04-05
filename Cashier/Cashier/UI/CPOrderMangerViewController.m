@@ -27,6 +27,7 @@
     UITableView *_orderTable;
     UIButton *_payNowButton;
     UIButton *_payLaterButton;
+    UIButton *_clearAllButton;
     
     UIView *_clearCellBgView;
     UILabel *_clearTitleLabel;
@@ -59,8 +60,6 @@
 - (CGFloat)getSigalPriceByIndex:(NSInteger)index;
 
 - (CGFloat)getTotalPriceByIndex:(NSInteger)index;
-
-- (void)clearButtonBecomeReady;
 
 - (void)clearButtonCancelReady;
 
@@ -231,13 +230,6 @@
     return 0;
 }
 
-- (void)clearButtonBecomeReady
-{
-    _shouldClearAllRows = YES;
-    _clearCellBgView.backgroundColor = [UIColor redColor];
-    _clearTitleLabel.textColor = [UIColor whiteColor];
-    _clearTitleLabel.text = @"确认清除";
-}
 
 - (void)clearButtonCancelReady
 {
@@ -246,9 +238,10 @@
     NSInteger rowNumbers = [_orderTable numberOfRowsInSection:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:rowNumbers-1 inSection:0];
     if ([_orderTable.indexPathsForVisibleRows containsObject:indexPath]) {
-        _clearCellBgView.backgroundColor = [UIColor clearColor];
-        _clearTitleLabel.text = @"清除订单";
-        _clearTitleLabel.textColor = [UIColor blackColor];
+        _clearAllButton.selected = NO;
+        [_clearAllButton setBackgroundColor:[UIColor clearColor]];
+        [_clearAllButton setTitle:@"清除订单" forState:UIControlStateNormal];
+        [_clearAllButton setTitleColor:[CPValueUtility colorWithR:0x00 g:0x80 b:0x00 alpha:1.0] forState:UIControlStateNormal];
     }
 }
 
@@ -330,7 +323,27 @@
 
 - (void)clearAllAction:(UIButton *)button
 {
-    
+    if (button.selected) {
+        [button setBackgroundColor:[UIColor clearColor]];
+        [button setTitle:@"清除订单" forState:UIControlStateNormal];
+        [button setTitleColor:[CPValueUtility colorWithR:0x00 g:0x80 b:0x00 alpha:1.0] forState:UIControlStateNormal];
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(clearAllAnimationDidStop)];
+        _orderTable.alpha = 0;
+        
+        [UIView commitAnimations];
+        
+    }
+    else
+    {
+        [button setBackgroundColor:[UIColor redColor]];
+        [button setTitle:@"确认清除" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }
+    button.selected = !button.selected;
 }
 
 #pragma mark - Table view data source
@@ -460,12 +473,11 @@
             [cell.contentView addSubview:_clearCellBgView];
             [_clearCellBgView release];
             
-            UIButton *button = [CPCocoaSubViews buttonWithFrame:frame title:@"清除订单" normalImage:nil highlightImage:nil target:self action:nil];
+            _clearAllButton = [CPCocoaSubViews buttonWithFrame:frame title:@"清除订单" normalImage:nil highlightImage:nil target:self action:@selector(clearAllAction:)];
+            [_clearAllButton setTitleColor:[CPValueUtility colorWithR:0x00 g:0x80 b:0x00 alpha:1.0] forState:UIControlStateNormal];
             
             
-            
-            
-            [cell.contentView addSubview:button];
+            [cell.contentView addSubview:_clearAllButton];
             
         }
         else
@@ -538,70 +550,42 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self clearButtonCancelReady];
     
-    if (indexPath.row == _maxRowNumbers-1) {
-        
-        if (_shouldClearAllRows) {
-            // clear all
-            
-            [UIView beginAnimations:nil context:nil];
-            [UIView setAnimationDuration:0.5];
-            [UIView setAnimationDelegate:self];
-            [UIView setAnimationDidStopSelector:@selector(clearAllAnimationDidStop)];
-            _orderTable.alpha = 0;
-            
-            [UIView commitAnimations];
-            
-            
-        }
-        else
-        {
-            [self clearButtonBecomeReady];
-        }
-        
+    
+    if (indexPath.row == _maxRowNumbers - 1) {
+        return;
     }
-    else
+    
+    
+    // 当前还未显示编辑行
+    if (self.curIndexPath == nil) {
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+        self.curIndexPath = nextIndexPath;
+        [self showEditView];
+    }
+    else// 当前已显示编辑行
     {
-        [self clearButtonCancelReady];
-        
-        // 当前还未显示编辑行
-        if (self.curIndexPath == nil) {
-            NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
-            self.curIndexPath = nextIndexPath;
-            [self showEditView];
+        // 1.当前选中编辑行的上一行
+        BOOL priorRow = (indexPath.row == (self.curIndexPath.row - 1));
+        if (priorRow) {
+            [self hideEditView];
         }
-        else// 当前已显示编辑行
+        // 2.当前选中其他行
+        else if (indexPath.row != self.curIndexPath.row && !priorRow)
         {
-            // 1.当前选中编辑行的上一行
-            BOOL priorRow = (indexPath.row == (self.curIndexPath.row - 1));
-            if (priorRow) {
-                [self hideEditView];
-            }
-            // 2.当前选中其他行
-            else if (indexPath.row != self.curIndexPath.row && !priorRow)
-            {
-                NSInteger nowEditRow = self.curIndexPath.row;
-                [self hideEditView];
-                NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
-                self.curIndexPath = (indexPath.row < nowEditRow) ? nextIndexPath : indexPath;
-                [self showEditView];
-                
-            }
+            NSInteger nowEditRow = self.curIndexPath.row;
+            [self hideEditView];
+            NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+            self.curIndexPath = (indexPath.row < nowEditRow) ? nextIndexPath : indexPath;
+            [self showEditView];
             
         }
         
-        [tableView scrollToRowAtIndexPath:self.curIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [tableView scrollToRowAtIndexPath:self.curIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         
     }
-    
 
-    
-    
-    
-    
-   
-    
-    //[self.delegate orderViewWillHidden];
 }
 
 #pragma mark - Animation Delegate
