@@ -45,6 +45,8 @@
 @property(nonatomic, retain)UIView *orderMaskView;
 @property(nonatomic, retain)NSString *totalPrice;
 @property(nonatomic, retain)CPOrderMangerViewController *orderManageVC;
+@property(nonatomic, retain)NSMutableArray *curOrderList;
+@property(nonatomic, retain)NSString *curTotalAmount;
 
 - (void)showOrderManageView;
 
@@ -59,6 +61,8 @@
 @synthesize orderMaskView;
 @synthesize totalPrice;
 @synthesize orderManageVC;
+@synthesize curOrderList;
+@synthesize curTotalAmount;
 
 - (void)dealloc
 {
@@ -66,7 +70,8 @@
     self.orderManageVC = nil;
     self.orderMaskView = nil;
     self.totalPrice = nil;
-    FRelease(_curOrdersList);
+    self.curOrderList = nil;
+    self.curTotalAmount = nil;
     FRelease(_curTotalPrice);
     [super dealloc];
 }

@@ -39,6 +39,7 @@
 #define kValue  0.7
 #define kMargin 10
 #define kFontSize 30
+#define kOffset 30
 
 - (void)dealloc
 {
@@ -109,7 +110,7 @@
 - (void)touchDownAction:(UIButton *)button
 {
     _bgView.backgroundColor = [UIColor grayColor];
-    CGPoint originPoint = CGPointMake(CGRectGetMaxX(button.frame) - 30, CGRectGetMinY(button.frame));
+    CGPoint originPoint = CGPointMake(CGRectGetMaxX(button.frame) - kOffset, CGRectGetMinY(button.frame));
     CGPoint fromCenter = [button convertPoint:originPoint toView:self.superview.superview.superview];
     CPGoodsCountIndicator *indicator = [[CPGoodsCountIndicator alloc] initWithCenter:fromCenter count:1];
     UIView *ssuperview = [self.superview.superview.superview viewWithTag:10000];
