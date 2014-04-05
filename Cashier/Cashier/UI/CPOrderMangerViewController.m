@@ -286,8 +286,9 @@
 {
     NSInteger row = self.curIndexPath.row-1;
     NSMutableDictionary *dic = [self.orderList objectAtIndex:row];
-    NSInteger num = [[dic objectForKey:kGoodsNumber] integerValue];
-    NSString *newNum = [NSString stringWithFormat:@"%ld", (long)++num];
+    NSInteger num = [[dic objectForKey:kGoodsNumber] integerValue] + 1;
+    
+    NSString *newNum = [NSString stringWithFormat:@"%ld", (long)num];
     [dic setObject:newNum forKey:kGoodsNumber];
     
     CGFloat signalPrice = [[dic objectForKey:kDBSalePrice] floatValue];
@@ -304,8 +305,7 @@
     NSInteger row = self.curIndexPath.row-1;
     NSMutableDictionary *dic = [self.orderList objectAtIndex:row];
     CGFloat signalPrice = [[dic objectForKey:kDBSalePrice] floatValue];
-    NSInteger num = [[dic objectForKey:kGoodsNumber] integerValue];
-    num--;
+    NSInteger num = [[dic objectForKey:kGoodsNumber] integerValue] - 1;
     
     if (num == 0) {
         [self deleteAction:button];
@@ -316,9 +316,10 @@
         [dic setObject:newNum forKey:kGoodsNumber];
         NSString *lTotalPrice = [NSString stringWithFormat:@"%.2f", signalPrice*num];
         [dic setObject:lTotalPrice forKey:kGoodsTotalPrice];
+        [_orderTable reloadData];
+        [self.delegate orderTotalPriceDidChange:-signalPrice];
     }
-    [_orderTable reloadData];
-    [self.delegate orderTotalPriceDidChange:-signalPrice];
+    
 }
 
 
@@ -327,7 +328,10 @@
     [self.delegate orderManagerWillDismiss];
 }
 
-
+- (void)clearAllAction:(UIButton *)button
+{
+    
+}
 
 #pragma mark - Table view data source
 
@@ -456,12 +460,12 @@
             [cell.contentView addSubview:_clearCellBgView];
             [_clearCellBgView release];
             
-            _clearTitleLabel = [CPCocoaSubViews labelWithFrame:frame
-                                                          text:@"清除订单"
-                                                     alignment:NSTextAlignmentCenter
-                                                         color:[UIColor blackColor]
-                                                          font:font];
-            [cell.contentView addSubview:_clearTitleLabel];
+            UIButton *button = [CPCocoaSubViews buttonWithFrame:frame title:@"清除订单" normalImage:nil highlightImage:nil target:self action:nil];
+            
+            
+            
+            
+            [cell.contentView addSubview:button];
             
         }
         else

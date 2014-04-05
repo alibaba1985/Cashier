@@ -34,8 +34,6 @@
     UIButton *_shoppingCar;
     CGRect _orderOriginalFrame;
     CGRect _orderFullFrame;
-    NSMutableArray *_curOrdersList;
-    NSString *_curTotalPrice;
     UIViewController *_orderBaseVC;
     
     BOOL _orderWillDismiss;
@@ -72,7 +70,7 @@
     self.totalPrice = nil;
     self.curOrderList = nil;
     self.curTotalAmount = nil;
-    FRelease(_curTotalPrice);
+    
     [super dealloc];
 }
 
@@ -127,8 +125,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _curOrdersList = [[NSMutableArray alloc] init];
-    _curTotalPrice = [[NSString alloc] initWithString:@"0.00"];
+    self.curOrderList = [[[NSMutableArray alloc] init] autorelease];
+    self.curTotalAmount = [[[NSString alloc] initWithString:@"0.00"] autorelease];
     UIView *title = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
     title.backgroundColor = [UIColor clearColor];
     title.clipsToBounds = YES;
@@ -253,9 +251,8 @@
 {
     BOOL hasCommon = NO;
     NSMutableDictionary *cell = [NSMutableDictionary dictionaryWithDictionary:detail];
-    [cell setObject:@"1" forKey:kGoodsNumber];
-    [cell setObject:[detail objectForKey:kDBSalePrice] forKey:kGoodsTotalPrice];
-    for (NSMutableDictionary *dic in _curOrdersList) {
+    
+    for (NSMutableDictionary *dic in self.curOrderList) {
         if ([[dic objectForKey:kDBMenuName] isEqualToString:[cell objectForKey:kDBMenuName]]) {
             NSInteger num = [[dic objectForKey:kGoodsNumber] integerValue];
             num ++;
@@ -271,7 +268,9 @@
     }
     
     if (!hasCommon) {
-        [_curOrdersList addObject:cell];
+        [cell setObject:@"1" forKey:kGoodsNumber];
+        [cell setObject:[detail objectForKey:kDBSalePrice] forKey:kGoodsTotalPrice];
+        [self.curOrderList addObject:cell];
     }
     
     CGFloat curTotalPrice = [self.totalPrice floatValue];
@@ -301,7 +300,7 @@
     
     [UIView commitAnimations];
     
-    [self.orderManageVC reloadOrdersViewWithOrders:_curOrdersList];
+    [self.orderManageVC reloadOrdersViewWithOrders:self.curOrderList];
     return;
     
     

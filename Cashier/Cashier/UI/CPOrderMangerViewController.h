@@ -30,5 +30,6 @@
 
 - (void)cancelAction;
 
+- (void)clearAllAction:(UIButton *)button;
 
 @end

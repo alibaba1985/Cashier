@@ -66,9 +66,11 @@
     return self;
 }
 
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     _originalFrame = self.view.frame;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyBoardWillChangeFrame:)
@@ -93,6 +95,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
     //UIView设置阴影
     [self.view.layer setShadowOffset:CGSizeMake(5, 3)];
     [self.view.layer setShadowRadius:5];
@@ -123,6 +126,8 @@
     //[self addTapGesture];
     if ([CPValueUtility iOS7Device]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.navigationController.navigationBar.translucent = NO;
+        self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
     
