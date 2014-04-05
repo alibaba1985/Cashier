@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title_MainVC</key>
+	<string>星巴克</string>
+	<key>Title_LoginVC</key>
+	<string>用户登录</string>
+	<key>Title_RegisterVC</key>
+	<string>用户注册</string>
+	<key>Title_ResetPWDVC</key>
+	<string>重置密码</string>
+	<key>Title_GetBackPWDVC</key>
+	<string>找回密码</string>
+	<key>Btn_Register</key>
+	<string>注册</string>
+	<key>Btn_Login</key>
+	<string>登录</string>
+	<key>Btn_StartTry</key>
+	<string>开始体验</string>
+</dict>
+</plist>

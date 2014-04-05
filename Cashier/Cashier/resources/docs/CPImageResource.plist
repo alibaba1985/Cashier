@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Image_NavBarBg</key>
+	<string>NavigationBarBG.png</string>
+	<key>Image_Display</key>
+	<string>Display.png</string>
+	<key>PreDisplay_1</key>
+	<string>recommend_1.jpg</string>
+	<key>PreDisplay_2</key>
+	<string>recommend_2.jpg</string>
+	<key>PreDisplay_3</key>
+	<string>recommend_3.jpg</string>
+	<key>PreDisplay_4</key>
+	<string>recommend_4.jpg</string>
+	<key>PreDisplay_5</key>
+	<string>recommend_5.png</string>
+	<key>Btn_StartTryNormal</key>
+	<string>btn_up.png</string>
+	<key>Btn_StartTryHighLight</key>
+	<string>btn_down.png</string>
+	<key>Bar_Background</key>
+	<string>top_navigation_background.png</string>
+	<key>Bar_Infos_HighLight</key>
+	<string>top_navigation_infoicon_highlighted.png</string>
+	<key>Bar_Infos_Normal</key>
+	<string>top_navigation_infoicon.png</string>
+	<key>Bar_Menu_HighLight</key>
+	<string>top_navigation_menuicon_highlighted.png</string>
+	<key>Bar_Menu_Normal</key>
+	<string>top_navigation_menuicon.png</string>
+	<key>Bar_Back_Normal</key>
+	<string>top_navigation_back.png</string>
+	<key>Bar_Back_HighLight</key>
+	<string>top_navigation_back_highlighted.png</string>
+</dict>
+</plist>
