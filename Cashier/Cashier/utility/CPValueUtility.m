@@ -148,5 +148,13 @@
     return [UIColor colorWithRed:(r/0xFF) green:(g/0xFF) blue:(b/0xFF) alpha:alpha];
 }
 
++ (void)debugViewInfoByParentView:(UIView *)parentView
+{
+    DLog(@"---------- SubViews ----------");
+    for(UIView * aView in parentView.subviews) {
+        DLog(@"%@", aView);
+    }
+    DLog(@"--------------------");
+}
 
 @end

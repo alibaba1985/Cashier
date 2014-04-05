@@ -36,4 +36,6 @@
 
 + (UIColor *)colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b alpha:(CGFloat)alpha;
 
++ (void)debugViewInfoByParentView:(UIView *)parentView;
+
 @end

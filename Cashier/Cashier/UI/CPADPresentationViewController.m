@@ -157,7 +157,12 @@
 
 - (void)addResgisterButtonToView
 {
-    CGFloat x = (FScreenWidth*4 + (FScreenWidth - kButtonWidth*2)/3);
+    int page = 4;
+#ifdef DEBUG
+    page = 0;
+#endif
+    
+    CGFloat x = (FScreenWidth*page + (FScreenWidth - kButtonWidth*2)/3);
     CGRect frame = CGRectMake(x, FScreenHeight-kButtonHeight*2, kButtonWidth, kButtonHeight);
     _registerButton = [CPCocoaSubViews buttonWithFrame:frame
                                                   title:FGetStringByKey(kBtn_Register)
@@ -173,7 +178,12 @@
 
 - (void)addLoginButtonToView
 {
-    CGFloat x = (FScreenWidth*4 + (FScreenWidth - kButtonWidth*2)/3*2 + kButtonWidth);
+    int page = 4;
+#ifdef DEBUG
+    page = 0;
+#endif
+    
+    CGFloat x = (FScreenWidth*page + (FScreenWidth - kButtonWidth*2)/3*2 + kButtonWidth);
     CGRect frame = CGRectMake(x, FScreenHeight-kButtonHeight*2, kButtonWidth, kButtonHeight);
     _loginButton = [CPCocoaSubViews buttonWithFrame:frame
                                                   title:FGetStringByKey(kBtn_Login)
