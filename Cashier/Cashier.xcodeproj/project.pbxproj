@@ -28,8 +28,8 @@
 		0F224424188E84CB00272B86 /* CPBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F224423188E84CB00272B86 /* CPBusinessViewController.m */; };
 		0F224427188E87F700272B86 /* CPAccountManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F224426188E87F700272B86 /* CPAccountManagerViewController.m */; };
 		0F23ACA718B6F4E500E32191 /* CPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F23ACA618B6F4E500E32191 /* CPTextField.m */; };
-		0F2496D61880E793009D22F6 /* NSObject+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496C91880E793009D22F6 /* NSObject+UPJSON.m */; };
-		0F2496D71880E793009D22F6 /* NSString+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496CB1880E793009D22F6 /* NSString+UPJSON.m */; };
+		0F2496D61880E793009D22F6 /* NSObject+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496C91880E793009D22F6 /* NSObject+UPJSON.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		0F2496D71880E793009D22F6 /* NSString+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496CB1880E793009D22F6 /* NSString+UPJSON.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		0F2496D81880E793009D22F6 /* UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496CD1880E793009D22F6 /* UPJSON.m */; };
 		0F2496D91880E793009D22F6 /* UPJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496CF1880E793009D22F6 /* UPJsonBase.m */; };
 		0F2496DA1880E793009D22F6 /* UPJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496D11880E793009D22F6 /* UPJsonParser.m */; };
@@ -75,11 +75,6 @@
 		0FA93A19187AC03900A954CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA93A18187AC03900A954CF /* main.m */; };
 		0FA93A1D187AC03900A954CF /* CPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA93A1C187AC03900A954CF /* CPAppDelegate.m */; };
 		0FA93A28187AC03900A954CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA93A27187AC03900A954CF /* Images.xcassets */; };
-		0FA93A2F187AC03A00A954CF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA93A2E187AC03A00A954CF /* XCTest.framework */; };
-		0FA93A30187AC03A00A954CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA93A0C187AC03900A954CF /* Foundation.framework */; };
-		0FA93A31187AC03A00A954CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA93A10187AC03900A954CF /* UIKit.framework */; };
-		0FA93A39187AC03A00A954CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FA93A37187AC03A00A954CF /* InfoPlist.strings */; };
-		0FA93A3B187AC03A00A954CF /* CashierTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA93A3A187AC03A00A954CF /* CashierTests.m */; };
 		0FAC76E018AFDE6B0052CCC2 /* CPGoodsDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC76DF18AFDE6B0052CCC2 /* CPGoodsDetailCell.m */; };
 		0FAC76E318AFE1A20052CCC2 /* CPAddGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC76E218AFE1A20052CCC2 /* CPAddGoodsCell.m */; };
 		0FAC76E618AFE3350052CCC2 /* CPImagePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC76E518AFE3350052CCC2 /* CPImagePickerCell.m */; };
@@ -91,17 +86,18 @@
 		0FB1A9F01886B23400F6B0AD /* recommend_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB1A9EB1886B23400F6B0AD /* recommend_5.png */; };
 		0FB1A9F41886BAB800F6B0AD /* btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB1A9F21886BAB800F6B0AD /* btn_down.png */; };
 		0FB1A9F51886BAB800F6B0AD /* btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FB1A9F31886BAB800F6B0AD /* btn_up.png */; };
+		BC3EF66718EFB59800E9A416 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65018EFB59800E9A416 /* NSData+MKBase64.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66818EFB59800E9A416 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65218EFB59800E9A416 /* NSDate+RFC1123.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66918EFB59800E9A416 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65418EFB59800E9A416 /* NSDictionary+RequestEncoding.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66A18EFB59800E9A416 /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65618EFB59800E9A416 /* NSString+MKNetworkKitAdditions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66B18EFB59800E9A416 /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65818EFB59800E9A416 /* UIAlertView+MKNetworkKitAdditions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66C18EFB59800E9A416 /* UIButton+MKNetworkKitAdditions_Kevincao.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65A18EFB59800E9A416 /* UIButton+MKNetworkKitAdditions_Kevincao.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66D18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65C18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66E18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions_johankool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF65E18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions_johankool.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF66F18EFB59800E9A416 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF66018EFB59800E9A416 /* MKNetworkEngine.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF67018EFB59800E9A416 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF66318EFB59800E9A416 /* MKNetworkOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC3EF67118EFB59800E9A416 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF66618EFB59800E9A416 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0FA93A32187AC03A00A954CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0FA93A01187AC03900A954CF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0FA93A08187AC03900A954CF;
-			remoteInfo = Cashier;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0F008A1B18C195AE004CE84E /* beaver.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = beaver.sqlite; path = resources/DB/beaver.sqlite; sourceTree = "<group>"; };
@@ -219,7 +215,6 @@
 		0FA93A1B187AC03900A954CF /* CPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAppDelegate.h; sourceTree = "<group>"; };
 		0FA93A1C187AC03900A954CF /* CPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAppDelegate.m; sourceTree = "<group>"; };
 		0FA93A27187AC03900A954CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0FA93A2D187AC03A00A954CF /* CashierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA93A2E187AC03A00A954CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0FA93A36187AC03A00A954CF /* CashierTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CashierTests-Info.plist"; sourceTree = "<group>"; };
 		0FA93A38187AC03A00A954CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -239,6 +234,29 @@
 		0FB1A9EB1886B23400F6B0AD /* recommend_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recommend_5.png; path = resources/images/preDIsplay/recommend_5.png; sourceTree = "<group>"; };
 		0FB1A9F21886BAB800F6B0AD /* btn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_down.png; path = resources/images/buttons/btn_down.png; sourceTree = "<group>"; };
 		0FB1A9F31886BAB800F6B0AD /* btn_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_up.png; path = resources/images/buttons/btn_up.png; sourceTree = "<group>"; };
+		BC3EF64F18EFB59800E9A416 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
+		BC3EF65018EFB59800E9A416 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
+		BC3EF65118EFB59800E9A416 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		BC3EF65218EFB59800E9A416 /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		BC3EF65318EFB59800E9A416 /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		BC3EF65418EFB59800E9A416 /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		BC3EF65518EFB59800E9A416 /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		BC3EF65618EFB59800E9A416 /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		BC3EF65718EFB59800E9A416 /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		BC3EF65818EFB59800E9A416 /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		BC3EF65918EFB59800E9A416 /* UIButton+MKNetworkKitAdditions_Kevincao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MKNetworkKitAdditions_Kevincao.h"; sourceTree = "<group>"; };
+		BC3EF65A18EFB59800E9A416 /* UIButton+MKNetworkKitAdditions_Kevincao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MKNetworkKitAdditions_Kevincao.m"; sourceTree = "<group>"; };
+		BC3EF65B18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		BC3EF65C18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		BC3EF65D18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions_johankool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MKNetworkKitAdditions_johankool.h"; sourceTree = "<group>"; };
+		BC3EF65E18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions_johankool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MKNetworkKitAdditions_johankool.m"; sourceTree = "<group>"; };
+		BC3EF65F18EFB59800E9A416 /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		BC3EF66018EFB59800E9A416 /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		BC3EF66118EFB59800E9A416 /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		BC3EF66218EFB59800E9A416 /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		BC3EF66318EFB59800E9A416 /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		BC3EF66518EFB59800E9A416 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		BC3EF66618EFB59800E9A416 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,16 +269,6 @@
 				0FA93A0F187AC03900A954CF /* CoreGraphics.framework in Frameworks */,
 				0FA93A11187AC03900A954CF /* UIKit.framework in Frameworks */,
 				0FA93A0D187AC03900A954CF /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0FA93A2A187AC03A00A954CF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FA93A2F187AC03A00A954CF /* XCTest.framework in Frameworks */,
-				0FA93A31187AC03A00A954CF /* UIKit.framework in Frameworks */,
-				0FA93A30187AC03A00A954CF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +554,6 @@
 			isa = PBXGroup;
 			children = (
 				0FA93A09187AC03900A954CF /* Cashier.app */,
-				0FA93A2D187AC03A00A954CF /* CashierTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -567,6 +574,7 @@
 		0FA93A12187AC03900A954CF /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
+				BC3EF64D18EFB59800E9A416 /* MKNetworkKit */,
 				0F2496DD1880E7E9009D22F6 /* network */,
 				0F2496C61880E752009D22F6 /* openSource */,
 				0F32DFBE187D81800090B681 /* utility */,
@@ -624,6 +632,53 @@
 			name = buttons;
 			sourceTree = "<group>";
 		};
+		BC3EF64D18EFB59800E9A416 /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EF64E18EFB59800E9A416 /* Categories */,
+				BC3EF65F18EFB59800E9A416 /* MKNetworkEngine.h */,
+				BC3EF66018EFB59800E9A416 /* MKNetworkEngine.m */,
+				BC3EF66118EFB59800E9A416 /* MKNetworkKit.h */,
+				BC3EF66218EFB59800E9A416 /* MKNetworkOperation.h */,
+				BC3EF66318EFB59800E9A416 /* MKNetworkOperation.m */,
+				BC3EF66418EFB59800E9A416 /* Reachability */,
+			);
+			name = MKNetworkKit;
+			path = 3rdParty/MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		BC3EF64E18EFB59800E9A416 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EF64F18EFB59800E9A416 /* NSData+MKBase64.h */,
+				BC3EF65018EFB59800E9A416 /* NSData+MKBase64.m */,
+				BC3EF65118EFB59800E9A416 /* NSDate+RFC1123.h */,
+				BC3EF65218EFB59800E9A416 /* NSDate+RFC1123.m */,
+				BC3EF65318EFB59800E9A416 /* NSDictionary+RequestEncoding.h */,
+				BC3EF65418EFB59800E9A416 /* NSDictionary+RequestEncoding.m */,
+				BC3EF65518EFB59800E9A416 /* NSString+MKNetworkKitAdditions.h */,
+				BC3EF65618EFB59800E9A416 /* NSString+MKNetworkKitAdditions.m */,
+				BC3EF65718EFB59800E9A416 /* UIAlertView+MKNetworkKitAdditions.h */,
+				BC3EF65818EFB59800E9A416 /* UIAlertView+MKNetworkKitAdditions.m */,
+				BC3EF65918EFB59800E9A416 /* UIButton+MKNetworkKitAdditions_Kevincao.h */,
+				BC3EF65A18EFB59800E9A416 /* UIButton+MKNetworkKitAdditions_Kevincao.m */,
+				BC3EF65B18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions.h */,
+				BC3EF65C18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions.m */,
+				BC3EF65D18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions_johankool.h */,
+				BC3EF65E18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions_johankool.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		BC3EF66418EFB59800E9A416 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EF66518EFB59800E9A416 /* Reachability.h */,
+				BC3EF66618EFB59800E9A416 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -644,24 +699,6 @@
 			productReference = 0FA93A09187AC03900A954CF /* Cashier.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0FA93A2C187AC03A00A954CF /* CashierTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0FA93A41187AC03A00A954CF /* Build configuration list for PBXNativeTarget "CashierTests" */;
-			buildPhases = (
-				0FA93A29187AC03A00A954CF /* Sources */,
-				0FA93A2A187AC03A00A954CF /* Frameworks */,
-				0FA93A2B187AC03A00A954CF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0FA93A33187AC03A00A954CF /* PBXTargetDependency */,
-			);
-			name = CashierTests;
-			productName = CashierTests;
-			productReference = 0FA93A2D187AC03A00A954CF /* CashierTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -679,9 +716,6 @@
 							};
 						};
 					};
-					0FA93A2C187AC03A00A954CF = {
-						TestTargetID = 0FA93A08187AC03900A954CF;
-					};
 				};
 			};
 			buildConfigurationList = 0FA93A04187AC03900A954CF /* Build configuration list for PBXProject "Cashier" */;
@@ -698,7 +732,6 @@
 			projectRoot = "";
 			targets = (
 				0FA93A08187AC03900A954CF /* Cashier */,
-				0FA93A2C187AC03A00A954CF /* CashierTests */,
 			);
 		};
 /* End PBXProject section */
@@ -739,14 +772,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0FA93A2B187AC03A00A954CF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FA93A39187AC03A00A954CF /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -755,13 +780,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F32DFA1187D6A3D0090B681 /* CPADPresentationViewController.m in Sources */,
+				BC3EF66F18EFB59800E9A416 /* MKNetworkEngine.m in Sources */,
 				0FA93A19187AC03900A954CF /* main.m in Sources */,
 				0F1E38AE18910E7C0034E2E7 /* CPToast.m in Sources */,
 				0FAC76E318AFE1A20052CCC2 /* CPAddGoodsCell.m in Sources */,
+				BC3EF66E18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions_johankool.m in Sources */,
 				0F2496D81880E793009D22F6 /* UPJSON.m in Sources */,
 				0F32DFC1187D81CF0090B681 /* CPBackgroundDowner.m in Sources */,
 				0F32DFAD187D6CC70090B681 /* CPGetBackPWDViewController.m in Sources */,
 				0FB1A9E518869AFC00F6B0AD /* CPNetworkManager.m in Sources */,
+				BC3EF67118EFB59800E9A416 /* Reachability.m in Sources */,
+				BC3EF67018EFB59800E9A416 /* MKNetworkOperation.m in Sources */,
 				0FA93A1D187AC03900A954CF /* CPAppDelegate.m in Sources */,
 				0F72FFA2189262840072A4CD /* WLMenuViewController.m in Sources */,
 				0F22441E188E7C5000272B86 /* WLSideMenuItem.m in Sources */,
@@ -769,20 +798,27 @@
 				0F32DFA7187D6C1D0090B681 /* CPRegisterViewController.m in Sources */,
 				0F23ACA718B6F4E500E32191 /* CPTextField.m in Sources */,
 				0F2496E918812D0F009D22F6 /* CPViewAnimations.m in Sources */,
+				BC3EF66918EFB59800E9A416 /* NSDictionary+RequestEncoding.m in Sources */,
 				0F2496DA1880E793009D22F6 /* UPJsonParser.m in Sources */,
 				0F0E8A6118B9D55A008CE3D8 /* CPOrderMangerViewController.m in Sources */,
+				BC3EF66A18EFB59800E9A416 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				0F22441F188E7C5000272B86 /* WLSideMenuViewController.m in Sources */,
 				0F2496D61880E793009D22F6 /* NSObject+UPJSON.m in Sources */,
 				0F008A1F18C196CC004CE84E /* CPGoodsCategoryCell.m in Sources */,
 				0F2496DC1880E793009D22F6 /* UPJsonWriter.m in Sources */,
 				0FAC76E618AFE3350052CCC2 /* CPImagePickerCell.m in Sources */,
 				0F32DFA4187D6B9E0090B681 /* CPLoginViewController.m in Sources */,
+				BC3EF66818EFB59800E9A416 /* NSDate+RFC1123.m in Sources */,
 				0F2496D71880E793009D22F6 /* NSString+UPJSON.m in Sources */,
 				0F00BE0A18AE0F6600D2C630 /* CPCategoryViewController.m in Sources */,
 				0F3F70E21893B657005D53B9 /* CPImagePickerViewController.m in Sources */,
+				BC3EF66B18EFB59800E9A416 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				0F2496E5188123E8009D22F6 /* CPPreDisplayArea.m in Sources */,
 				0F72FF9F189259610072A4CD /* CPMoreViewController.m in Sources */,
 				0F0E8A5E18B9C9D5008CE3D8 /* CPGoodsCountIndicator.m in Sources */,
+				BC3EF66D18EFB59800E9A416 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
+				BC3EF66C18EFB59800E9A416 /* UIButton+MKNetworkKitAdditions_Kevincao.m in Sources */,
+				BC3EF66718EFB59800E9A416 /* NSData+MKBase64.m in Sources */,
 				0F47D7DB18AB0A7E001717EC /* CPDataBaseManager.m in Sources */,
 				0F566E27187EC86200A17FBF /* CPValueUtility.m in Sources */,
 				0F32DFAA187D6C9C0090B681 /* CPResetPWDViewController.m in Sources */,
@@ -803,23 +839,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0FA93A29187AC03A00A954CF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FA93A3B187AC03A00A954CF /* CashierTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0FA93A33187AC03A00A954CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0FA93A08187AC03900A954CF /* Cashier */;
-			targetProxy = 0FA93A32187AC03A00A954CF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0FA93A15187AC03900A954CF /* InfoPlist.strings */ = {
@@ -918,6 +938,7 @@
 		0FA93A3F187AC03A00A954CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -926,6 +947,7 @@
 				GCC_PREFIX_HEADER = "Cashier/Cashier-Prefix.pch";
 				INFOPLIST_FILE = "Cashier/Cashier-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -933,6 +955,7 @@
 		0FA93A40187AC03A00A954CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -941,47 +964,8 @@
 				GCC_PREFIX_HEADER = "Cashier/Cashier-Prefix.pch";
 				INFOPLIST_FILE = "Cashier/Cashier-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		0FA93A42187AC03A00A954CF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cashier.app/Cashier";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Cashier/Cashier-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "CashierTests/CashierTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		0FA93A43187AC03A00A954CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cashier.app/Cashier";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Cashier/Cashier-Prefix.pch";
-				INFOPLIST_FILE = "CashierTests/CashierTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -1002,15 +986,6 @@
 			buildConfigurations = (
 				0FA93A3F187AC03A00A954CF /* Debug */,
 				0FA93A40187AC03A00A954CF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0FA93A41187AC03A00A954CF /* Build configuration list for PBXNativeTarget "CashierTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0FA93A42187AC03A00A954CF /* Debug */,
-				0FA93A43187AC03A00A954CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
