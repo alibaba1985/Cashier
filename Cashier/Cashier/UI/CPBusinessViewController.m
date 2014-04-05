@@ -174,6 +174,7 @@
     
     CGRect carFrame = CGRectMake(FScreenWidth - kCarWidth - kCommMargin, CGRectGetMaxY(_goodsCollection.frame)+ kCommMargin, kCarWidth, kCarHeight);
     _shoppingCar = [CPCocoaSubViews buttonWithFrame:carFrame title:@"￥0.00" normalImage:[UIImage imageNamed:@"greenBtn.png"] highlightImage:[UIImage imageNamed:@"grayBtn.png"] target:self action:@selector(showOrderListAction:)];
+    _shoppingCar.tag = 10000;
     //[_shoppingCar addTarget:self action:@selector(shoppingCarTouchDownAction:) forControlEvents:UIControlEventTouchDown];
     //[_shoppingCar addTarget:self action:@selector(shoppingCarTouchOutAction:) forControlEvents:UIControlEventTouchDragOutside];
     //[_shoppingCar addTarget:self action:@selector(shoppingCarTouchInAction:) forControlEvents:UIControlEventTouchDragInside];
