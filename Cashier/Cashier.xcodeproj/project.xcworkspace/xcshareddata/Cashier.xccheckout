@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A5AC4B1B-5A7B-4116-BF42-77141D9C9E9C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Cashier</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5486F16D-8D58-47D3-B537-267A88BBF915</key>
+		<string>https://github.com/swalt888/Cashier.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cashier/Cashier.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5486F16D-8D58-47D3-B537-267A88BBF915</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/swalt888/Cashier.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5486F16D-8D58-47D3-B537-267A88BBF915</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5486F16D-8D58-47D3-B537-267A88BBF915</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cashier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
