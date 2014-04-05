@@ -318,6 +318,9 @@
 
 - (void)cancelAction
 {
+    if (self.curIndexPath != nil) {
+        [self hideEditView];
+    }
     [self.delegate orderManagerWillDismiss];
 }
 
@@ -548,15 +551,64 @@
 }
 
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BOOL ret = YES;
+    
+    if (indexPath == self.curIndexPath) {
+        ret = NO;
+    }
+    
+    return ret;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        NSInteger index = indexPath.row;
+        
+        if (self.curIndexPath.row < self.orderList.count)
+        {
+            if (indexPath.row < self.curIndexPath.row) {
+                index = indexPath.row;
+            }
+            else if (indexPath.row > self.curIndexPath.row)
+            {
+                index = indexPath.row-1;
+            }
+        }
+        
+        NSMutableDictionary *dic = [self.orderList objectAtIndex:index];
+        CGFloat totalPrice = [[dic objectForKey:kGoodsTotalPrice] floatValue];
+        
+        [self.orderList removeObjectAtIndex:index];
+        self.curIndexPath = nil;
+        
+        [_orderTable reloadData];
+        [self.delegate orderTotalPriceDidChange:-totalPrice];
+        
+        if (self.orderList.count == 0) {
+            [self.delegate orderManagerWillDismiss];
+        }
+    }
+}
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self clearButtonCancelReady];
     
-    
     if (indexPath.row == _maxRowNumbers - 1) {
         return;
     }
-    
     
     // 当前还未显示编辑行
     if (self.curIndexPath == nil) {
