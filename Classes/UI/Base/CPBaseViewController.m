@@ -315,6 +315,21 @@
     }
 }
 
+- (void)addLeftNavigationButtonWithTitle:(NSString *)title action:(SEL)action
+{
+    _leftItem = [[[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action] autorelease];
+    _leftItem.tintColor = [UIColor grayColor];
+    self.navigationItem.leftBarButtonItem = _leftItem;
+}
+
+- (void)addRightNavigationButtonWithTitle:(NSString *)title action:(SEL)action
+{
+    _rightItem = [[[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action] autorelease];
+    _rightItem.tintColor = [UIColor greenColor];
+    self.navigationItem.rightBarButtonItem = _rightItem;
+}
+
+
 - (void)addNavigationBar
 {
     _leftItem = [[[UIBarButtonItem alloc] initWithTitle:@"上一步" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarAction:)] autorelease];
