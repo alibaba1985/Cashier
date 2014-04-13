@@ -97,6 +97,7 @@
 		BC3EF66F18EFB59800E9A416 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF66018EFB59800E9A416 /* MKNetworkEngine.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC3EF67018EFB59800E9A416 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF66318EFB59800E9A416 /* MKNetworkOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC3EF67118EFB59800E9A416 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3EF66618EFB59800E9A416 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC9FE0A218FA56A900C986C3 /* bg_inputbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9FE0A118FA56A900C986C3 /* bg_inputbox.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,6 +258,7 @@
 		BC3EF66318EFB59800E9A416 /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
 		BC3EF66518EFB59800E9A416 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BC3EF66618EFB59800E9A416 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		BC9FE0A118FA56A900C986C3 /* bg_inputbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_inputbox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,16 +576,8 @@
 		0FA93A12187AC03900A954CF /* Cashier */ = {
 			isa = PBXGroup;
 			children = (
-				BC3EF64D18EFB59800E9A416 /* MKNetworkKit */,
-				0F2496DD1880E7E9009D22F6 /* network */,
-				0F2496C61880E752009D22F6 /* openSource */,
-				0F32DFBE187D81800090B681 /* utility */,
-				0F32DFB9187D74330090B681 /* config */,
-				0F32DFAF187D6EB60090B681 /* resource */,
-				0F32DF98187D67AB0090B681 /* UI */,
-				0FA93A1B187AC03900A954CF /* CPAppDelegate.h */,
-				0FA93A1C187AC03900A954CF /* CPAppDelegate.m */,
-				0FA93A27187AC03900A954CF /* Images.xcassets */,
+				BC9FE09E18FA565E00C986C3 /* Class */,
+				BC9FE0A018FA56A900C986C3 /* Res */,
 				0FA93A13187AC03900A954CF /* Supporting Files */,
 			);
 			path = Cashier;
@@ -679,6 +673,31 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		BC9FE09E18FA565E00C986C3 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				BC3EF64D18EFB59800E9A416 /* MKNetworkKit */,
+				0F2496DD1880E7E9009D22F6 /* network */,
+				0F2496C61880E752009D22F6 /* openSource */,
+				0F32DFBE187D81800090B681 /* utility */,
+				0F32DFB9187D74330090B681 /* config */,
+				0F32DFAF187D6EB60090B681 /* resource */,
+				0F32DF98187D67AB0090B681 /* UI */,
+				0FA93A1B187AC03900A954CF /* CPAppDelegate.h */,
+				0FA93A1C187AC03900A954CF /* CPAppDelegate.m */,
+				0FA93A27187AC03900A954CF /* Images.xcassets */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		BC9FE0A018FA56A900C986C3 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				BC9FE0A118FA56A900C986C3 /* bg_inputbox.png */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -751,6 +770,7 @@
 				0F390E5D1888009C00CA4C9A /* top_navigation_background.png in Resources */,
 				0FB1A9EE1886B23400F6B0AD /* recommend_3.jpg in Resources */,
 				0F2496EE188130C5009D22F6 /* Display.png in Resources */,
+				BC9FE0A218FA56A900C986C3 /* bg_inputbox.png in Resources */,
 				0F32DFB8187D70890090B681 /* CPImageResource.plist in Resources */,
 				0F390E581887FE2600CA4C9A /* top_navigation_infoicon.png in Resources */,
 				0FB1A9F51886BAB800F6B0AD /* btn_up.png in Resources */,
