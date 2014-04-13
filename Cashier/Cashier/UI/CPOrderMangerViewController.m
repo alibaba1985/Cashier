@@ -560,7 +560,7 @@
 {
     BOOL ret = YES;
     
-    if (indexPath == self.curIndexPath) {
+    if (indexPath.row == self.curIndexPath.row) {
         ret = NO;
     }
     
@@ -571,32 +571,44 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        
         NSInteger index = indexPath.row;
         
-        if (self.curIndexPath.row < self.orderList.count)
-        {
-            if (indexPath.row < self.curIndexPath.row) {
-                index = indexPath.row;
-            }
-            else if (indexPath.row > self.curIndexPath.row)
+        if (self.curIndexPath != nil) {
+            if (self.curIndexPath.row < self.orderList.count)
             {
-                index = indexPath.row-1;
+                if (indexPath.row < self.curIndexPath.row - 1) {
+                    index = indexPath.row;
+                    NSIndexPath *newPath = [NSIndexPath indexPathForRow:self.curIndexPath.row-1 inSection:self.curIndexPath.section];
+                    self.curIndexPath = newPath;
+                    
+                }
+                else if (indexPath.row == self.curIndexPath.row - 1)
+                {
+                    self.curIndexPath = nil;
+                }
+                
+                else if (indexPath.row > self.curIndexPath.row)
+                {
+                    index = indexPath.row-1;
+                    
+                }
+                
             }
+            
         }
         
         NSMutableDictionary *dic = [self.orderList objectAtIndex:index];
         CGFloat totalPrice = [[dic objectForKey:kGoodsTotalPrice] floatValue];
-        
+    
         [self.orderList removeObjectAtIndex:index];
-        self.curIndexPath = nil;
-        
         [_orderTable reloadData];
         [self.delegate orderTotalPriceDidChange:-totalPrice];
         
         if (self.orderList.count == 0) {
+            self.curIndexPath = nil;
             [self.delegate orderManagerWillDismiss];
         }
+        
     }
 }
 
