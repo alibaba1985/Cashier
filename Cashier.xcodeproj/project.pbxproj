@@ -173,40 +173,40 @@
 		BC22F68218FA61A100612BBB /* UPHttpsConnectDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPHttpsConnectDelegate.h; sourceTree = "<group>"; };
 		BC22F68518FA61A100612BBB /* CPViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPViewAnimations.h; sourceTree = "<group>"; };
 		BC22F68618FA61A100612BBB /* CPViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPViewAnimations.m; sourceTree = "<group>"; };
-		BC22F68818FA61A100612BBB /* CPGoodsCountIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGoodsCountIndicator.h; sourceTree = "<group>"; };
-		BC22F68918FA61A100612BBB /* CPGoodsCountIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGoodsCountIndicator.m; sourceTree = "<group>"; };
-		BC22F68A18FA61A100612BBB /* CPAccountManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAccountManagerViewController.h; sourceTree = "<group>"; };
-		BC22F68B18FA61A100612BBB /* CPAccountManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAccountManagerViewController.m; sourceTree = "<group>"; };
+		BC22F68818FA61A100612BBB /* CPGoodsCountIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPGoodsCountIndicator.h; path = ../business/CPGoodsCountIndicator.h; sourceTree = "<group>"; };
+		BC22F68918FA61A100612BBB /* CPGoodsCountIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPGoodsCountIndicator.m; path = ../business/CPGoodsCountIndicator.m; sourceTree = "<group>"; };
+		BC22F68A18FA61A100612BBB /* CPAccountManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAccountManagerViewController.h; path = ../CPAccountManagerViewController.h; sourceTree = "<group>"; };
+		BC22F68B18FA61A100612BBB /* CPAccountManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAccountManagerViewController.m; path = ../CPAccountManagerViewController.m; sourceTree = "<group>"; };
 		BC22F68C18FA61A100612BBB /* CPADPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPADPresentationViewController.h; sourceTree = "<group>"; };
 		BC22F68D18FA61A100612BBB /* CPADPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPADPresentationViewController.m; sourceTree = "<group>"; };
 		BC22F68E18FA61A100612BBB /* CPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPBaseViewController.h; sourceTree = "<group>"; };
 		BC22F68F18FA61A100612BBB /* CPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPBaseViewController.m; sourceTree = "<group>"; };
-		BC22F69018FA61A100612BBB /* CPBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPBusinessViewController.h; sourceTree = "<group>"; };
-		BC22F69118FA61A100612BBB /* CPBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPBusinessViewController.m; sourceTree = "<group>"; };
+		BC22F69018FA61A100612BBB /* CPBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPBusinessViewController.h; path = ../CPBusinessViewController.h; sourceTree = "<group>"; };
+		BC22F69118FA61A100612BBB /* CPBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPBusinessViewController.m; path = ../CPBusinessViewController.m; sourceTree = "<group>"; };
 		BC22F69218FA61A100612BBB /* CPCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCategoryViewController.h; sourceTree = "<group>"; };
 		BC22F69318FA61A100612BBB /* CPCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCategoryViewController.m; sourceTree = "<group>"; };
-		BC22F69418FA61A100612BBB /* CPGetBackPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGetBackPWDViewController.h; sourceTree = "<group>"; };
-		BC22F69518FA61A100612BBB /* CPGetBackPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGetBackPWDViewController.m; sourceTree = "<group>"; };
+		BC22F69418FA61A100612BBB /* CPGetBackPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPGetBackPWDViewController.h; path = ../CPGetBackPWDViewController.h; sourceTree = "<group>"; };
+		BC22F69518FA61A100612BBB /* CPGetBackPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPGetBackPWDViewController.m; path = ../CPGetBackPWDViewController.m; sourceTree = "<group>"; };
 		BC22F69618FA61A100612BBB /* CPGoodsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGoodsInfoViewController.h; sourceTree = "<group>"; };
 		BC22F69718FA61A100612BBB /* CPGoodsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPGoodsInfoViewController.m; sourceTree = "<group>"; };
 		BC22F69818FA61A100612BBB /* CPImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPImagePickerViewController.h; sourceTree = "<group>"; };
 		BC22F69918FA61A100612BBB /* CPImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPImagePickerViewController.m; sourceTree = "<group>"; };
-		BC22F69A18FA61A100612BBB /* CPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLoginViewController.h; sourceTree = "<group>"; };
-		BC22F69B18FA61A100612BBB /* CPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLoginViewController.m; sourceTree = "<group>"; };
+		BC22F69A18FA61A100612BBB /* CPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPLoginViewController.h; path = ../CPLoginViewController.h; sourceTree = "<group>"; };
+		BC22F69B18FA61A100612BBB /* CPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPLoginViewController.m; path = ../CPLoginViewController.m; sourceTree = "<group>"; };
 		BC22F69C18FA61A100612BBB /* CPMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPMoreViewController.h; sourceTree = "<group>"; };
 		BC22F69D18FA61A100612BBB /* CPMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPMoreViewController.m; sourceTree = "<group>"; };
-		BC22F69E18FA61A100612BBB /* CPOrderMangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPOrderMangerViewController.h; sourceTree = "<group>"; };
-		BC22F69F18FA61A100612BBB /* CPOrderMangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPOrderMangerViewController.m; sourceTree = "<group>"; };
-		BC22F6A018FA61A100612BBB /* CPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPRegisterViewController.h; sourceTree = "<group>"; };
-		BC22F6A118FA61A100612BBB /* CPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPRegisterViewController.m; sourceTree = "<group>"; };
-		BC22F6A218FA61A100612BBB /* CPResetPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPResetPWDViewController.h; sourceTree = "<group>"; };
-		BC22F6A318FA61A100612BBB /* CPResetPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPResetPWDViewController.m; sourceTree = "<group>"; };
+		BC22F69E18FA61A100612BBB /* CPOrderMangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPOrderMangerViewController.h; path = ../CPOrderMangerViewController.h; sourceTree = "<group>"; };
+		BC22F69F18FA61A100612BBB /* CPOrderMangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPOrderMangerViewController.m; path = ../CPOrderMangerViewController.m; sourceTree = "<group>"; };
+		BC22F6A018FA61A100612BBB /* CPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRegisterViewController.h; path = ../CPRegisterViewController.h; sourceTree = "<group>"; };
+		BC22F6A118FA61A100612BBB /* CPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRegisterViewController.m; path = ../CPRegisterViewController.m; sourceTree = "<group>"; };
+		BC22F6A218FA61A100612BBB /* CPResetPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPResetPWDViewController.h; path = ../CPResetPWDViewController.h; sourceTree = "<group>"; };
+		BC22F6A318FA61A100612BBB /* CPResetPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPResetPWDViewController.m; path = ../CPResetPWDViewController.m; sourceTree = "<group>"; };
 		BC22F6A418FA61A100612BBB /* CPStoreInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPStoreInfoViewController.h; sourceTree = "<group>"; };
 		BC22F6A518FA61A100612BBB /* CPStoreInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPStoreInfoViewController.m; sourceTree = "<group>"; };
 		BC22F6A618FA61A100612BBB /* CPStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPStoreViewController.h; sourceTree = "<group>"; };
 		BC22F6A718FA61A100612BBB /* CPStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPStoreViewController.m; sourceTree = "<group>"; };
-		BC22F6A818FA61A100612BBB /* DDPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPageControl.h; sourceTree = "<group>"; };
-		BC22F6A918FA61A200612BBB /* DDPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPageControl.m; sourceTree = "<group>"; };
+		BC22F6A818FA61A100612BBB /* DDPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDPageControl.h; path = ../DDPageControl.h; sourceTree = "<group>"; };
+		BC22F6A918FA61A200612BBB /* DDPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDPageControl.m; path = ../DDPageControl.m; sourceTree = "<group>"; };
 		BC22F6AB18FA61A200612BBB /* CPAddGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAddGoodsCell.h; sourceTree = "<group>"; };
 		BC22F6AC18FA61A200612BBB /* CPAddGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPAddGoodsCell.m; sourceTree = "<group>"; };
 		BC22F6AD18FA61A200612BBB /* CPAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPAlertView.h; sourceTree = "<group>"; };
@@ -293,6 +293,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2CDC5818FA67530003F254 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				BC22F69418FA61A100612BBB /* CPGetBackPWDViewController.h */,
+				BC22F6A018FA61A100612BBB /* CPRegisterViewController.h */,
+				BC22F6A118FA61A100612BBB /* CPRegisterViewController.m */,
+				BC22F6A218FA61A100612BBB /* CPResetPWDViewController.h */,
+				BC22F6A318FA61A100612BBB /* CPResetPWDViewController.m */,
+				BC22F69518FA61A100612BBB /* CPGetBackPWDViewController.m */,
+				BC22F69A18FA61A100612BBB /* CPLoginViewController.h */,
+				BC22F69B18FA61A100612BBB /* CPLoginViewController.m */,
+				BC22F68A18FA61A100612BBB /* CPAccountManagerViewController.h */,
+				BC22F68B18FA61A100612BBB /* CPAccountManagerViewController.m */,
+			);
+			name = account;
+			path = business;
+			sourceTree = "<group>";
+		};
+		0F2CDC5918FA67800003F254 /* more */ = {
+			isa = PBXGroup;
+			children = (
+				BC22F69C18FA61A100612BBB /* CPMoreViewController.h */,
+				BC22F69D18FA61A100612BBB /* CPMoreViewController.m */,
+			);
+			name = more;
+			sourceTree = "<group>";
+		};
+		0F2CDC5A18FA67D90003F254 /* store */ = {
+			isa = PBXGroup;
+			children = (
+				BC22F69618FA61A100612BBB /* CPGoodsInfoViewController.h */,
+				BC22F69718FA61A100612BBB /* CPGoodsInfoViewController.m */,
+				BC22F69818FA61A100612BBB /* CPImagePickerViewController.h */,
+				BC22F6A418FA61A100612BBB /* CPStoreInfoViewController.h */,
+				BC22F6A518FA61A100612BBB /* CPStoreInfoViewController.m */,
+				BC22F6A618FA61A100612BBB /* CPStoreViewController.h */,
+				BC22F6A718FA61A100612BBB /* CPStoreViewController.m */,
+				BC22F69918FA61A100612BBB /* CPImagePickerViewController.m */,
+			);
+			name = store;
+			sourceTree = "<group>";
+		};
+		0F2CDC5C18FA68440003F254 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				BC22F68C18FA61A100612BBB /* CPADPresentationViewController.h */,
+				BC22F68D18FA61A100612BBB /* CPADPresentationViewController.m */,
+				BC22F68E18FA61A100612BBB /* CPBaseViewController.h */,
+				BC22F68F18FA61A100612BBB /* CPBaseViewController.m */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		0F2CDC5D18FA68740003F254 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				BC22F69218FA61A100612BBB /* CPCategoryViewController.h */,
+				BC22F69318FA61A100612BBB /* CPCategoryViewController.m */,
+			);
+			name = categories;
+			sourceTree = "<group>";
+		};
 		0FA93A00187AC03900A954CF = {
 			isa = PBXGroup;
 			children = (
@@ -469,40 +531,13 @@
 		BC22F68318FA61A100612BBB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0F2CDC5D18FA68740003F254 /* categories */,
+				0F2CDC5C18FA68440003F254 /* base */,
+				0F2CDC5A18FA67D90003F254 /* store */,
+				0F2CDC5918FA67800003F254 /* more */,
+				0F2CDC5818FA67530003F254 /* account */,
 				BC22F68418FA61A100612BBB /* animations */,
 				BC22F68718FA61A100612BBB /* business */,
-				BC22F68A18FA61A100612BBB /* CPAccountManagerViewController.h */,
-				BC22F68B18FA61A100612BBB /* CPAccountManagerViewController.m */,
-				BC22F68C18FA61A100612BBB /* CPADPresentationViewController.h */,
-				BC22F68D18FA61A100612BBB /* CPADPresentationViewController.m */,
-				BC22F68E18FA61A100612BBB /* CPBaseViewController.h */,
-				BC22F68F18FA61A100612BBB /* CPBaseViewController.m */,
-				BC22F69018FA61A100612BBB /* CPBusinessViewController.h */,
-				BC22F69118FA61A100612BBB /* CPBusinessViewController.m */,
-				BC22F69218FA61A100612BBB /* CPCategoryViewController.h */,
-				BC22F69318FA61A100612BBB /* CPCategoryViewController.m */,
-				BC22F69418FA61A100612BBB /* CPGetBackPWDViewController.h */,
-				BC22F69518FA61A100612BBB /* CPGetBackPWDViewController.m */,
-				BC22F69618FA61A100612BBB /* CPGoodsInfoViewController.h */,
-				BC22F69718FA61A100612BBB /* CPGoodsInfoViewController.m */,
-				BC22F69818FA61A100612BBB /* CPImagePickerViewController.h */,
-				BC22F69918FA61A100612BBB /* CPImagePickerViewController.m */,
-				BC22F69A18FA61A100612BBB /* CPLoginViewController.h */,
-				BC22F69B18FA61A100612BBB /* CPLoginViewController.m */,
-				BC22F69C18FA61A100612BBB /* CPMoreViewController.h */,
-				BC22F69D18FA61A100612BBB /* CPMoreViewController.m */,
-				BC22F69E18FA61A100612BBB /* CPOrderMangerViewController.h */,
-				BC22F69F18FA61A100612BBB /* CPOrderMangerViewController.m */,
-				BC22F6A018FA61A100612BBB /* CPRegisterViewController.h */,
-				BC22F6A118FA61A100612BBB /* CPRegisterViewController.m */,
-				BC22F6A218FA61A100612BBB /* CPResetPWDViewController.h */,
-				BC22F6A318FA61A100612BBB /* CPResetPWDViewController.m */,
-				BC22F6A418FA61A100612BBB /* CPStoreInfoViewController.h */,
-				BC22F6A518FA61A100612BBB /* CPStoreInfoViewController.m */,
-				BC22F6A618FA61A100612BBB /* CPStoreViewController.h */,
-				BC22F6A718FA61A100612BBB /* CPStoreViewController.m */,
-				BC22F6A818FA61A100612BBB /* DDPageControl.h */,
-				BC22F6A918FA61A200612BBB /* DDPageControl.m */,
 				BC22F6AA18FA61A200612BBB /* items */,
 				BC22F6C118FA61A200612BBB /* TnPreviewPagingScrollView.h */,
 				BC22F6C218FA61A200612BBB /* TnPreviewPagingScrollView.m */,
@@ -525,8 +560,10 @@
 		BC22F68718FA61A100612BBB /* business */ = {
 			isa = PBXGroup;
 			children = (
-				BC22F68818FA61A100612BBB /* CPGoodsCountIndicator.h */,
-				BC22F68918FA61A100612BBB /* CPGoodsCountIndicator.m */,
+				BC22F69018FA61A100612BBB /* CPBusinessViewController.h */,
+				BC22F69118FA61A100612BBB /* CPBusinessViewController.m */,
+				BC22F69E18FA61A100612BBB /* CPOrderMangerViewController.h */,
+				BC22F69F18FA61A100612BBB /* CPOrderMangerViewController.m */,
 			);
 			path = business;
 			sourceTree = "<group>";
@@ -534,6 +571,10 @@
 		BC22F6AA18FA61A200612BBB /* items */ = {
 			isa = PBXGroup;
 			children = (
+				BC22F6A818FA61A100612BBB /* DDPageControl.h */,
+				BC22F6A918FA61A200612BBB /* DDPageControl.m */,
+				BC22F68818FA61A100612BBB /* CPGoodsCountIndicator.h */,
+				BC22F68918FA61A100612BBB /* CPGoodsCountIndicator.m */,
 				BC22F6AB18FA61A200612BBB /* CPAddGoodsCell.h */,
 				BC22F6AC18FA61A200612BBB /* CPAddGoodsCell.m */,
 				BC22F6AD18FA61A200612BBB /* CPAlertView.h */,
