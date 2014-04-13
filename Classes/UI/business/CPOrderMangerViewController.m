@@ -211,9 +211,10 @@
 
 - (void)hideEditView
 {
+    
+    [_orderTable beginUpdates];
     NSArray *array = [NSArray arrayWithObjects:self.curIndexPath, nil];
     self.curIndexPath = nil;
-    [_orderTable beginUpdates];
     [_orderTable deleteRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];
     [_orderTable endUpdates];
     
@@ -554,7 +555,7 @@
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return (UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert);
+    return UITableViewCellEditingStyleDelete;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -626,10 +627,7 @@
         }
         
     }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-    {
-        
-    }
+
 }
 
 

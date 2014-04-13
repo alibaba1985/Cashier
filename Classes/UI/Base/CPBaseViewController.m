@@ -103,6 +103,7 @@
     
     if ([CPValueUtility iOS7Device]) {
         [self setNeedsStatusBarAppearanceUpdate];
+        self.navigationController.navigationBar.translucent = NO;
         [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     }
 	// Do any additional setup after loading the view.
