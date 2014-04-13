@@ -39,6 +39,7 @@
 		0F2496E918812D0F009D22F6 /* CPViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2496E818812D0F009D22F6 /* CPViewAnimations.m */; };
 		0F2496EE188130C5009D22F6 /* Display.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2496ED188130C5009D22F6 /* Display.png */; };
 		0F28BC8F18A8E4C7002C9036 /* CPGoodsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F28BC8E18A8E4C7002C9036 /* CPGoodsInfoViewController.m */; };
+		0F2CDC5718FA5AB50003F254 /* CPViewControllerCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CDC5618FA5AB50003F254 /* CPViewControllerCategory.m */; };
 		0F32DF9B187D68100090B681 /* CPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F32DF9A187D68100090B681 /* CPBaseViewController.m */; };
 		0F32DF9E187D682B0090B681 /* CPStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F32DF9D187D682B0090B681 /* CPStoreViewController.m */; };
 		0F32DFA1187D6A3D0090B681 /* CPADPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F32DFA0187D6A3D0090B681 /* CPADPresentationViewController.m */; };
@@ -156,6 +157,8 @@
 		0F2496ED188130C5009D22F6 /* Display.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Display.png; path = resources/images/display/Display.png; sourceTree = "<group>"; };
 		0F28BC8D18A8E4C7002C9036 /* CPGoodsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPGoodsInfoViewController.h; path = UI/CPGoodsInfoViewController.h; sourceTree = "<group>"; };
 		0F28BC8E18A8E4C7002C9036 /* CPGoodsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPGoodsInfoViewController.m; path = UI/CPGoodsInfoViewController.m; sourceTree = "<group>"; };
+		0F2CDC5518FA5AB50003F254 /* CPViewControllerCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPViewControllerCategory.h; path = UI/Categories/CPViewControllerCategory.h; sourceTree = "<group>"; };
+		0F2CDC5618FA5AB50003F254 /* CPViewControllerCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPViewControllerCategory.m; path = UI/Categories/CPViewControllerCategory.m; sourceTree = "<group>"; };
 		0F32DF99187D68100090B681 /* CPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPBaseViewController.h; path = UI/CPBaseViewController.h; sourceTree = "<group>"; };
 		0F32DF9A187D68100090B681 /* CPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPBaseViewController.m; path = UI/CPBaseViewController.m; sourceTree = "<group>"; };
 		0F32DF9C187D682B0090B681 /* CPStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPStoreViewController.h; path = UI/CPStoreViewController.h; sourceTree = "<group>"; };
@@ -391,9 +394,19 @@
 			name = display;
 			sourceTree = "<group>";
 		};
+		0F2CDC5418FA5A180003F254 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0F2CDC5518FA5AB50003F254 /* CPViewControllerCategory.h */,
+				0F2CDC5618FA5AB50003F254 /* CPViewControllerCategory.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		0F32DF98187D67AB0090B681 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0F2CDC5418FA5A180003F254 /* Categories */,
 				0F72FF9C189258F70072A4CD /* more */,
 				0F224421188E848C00272B86 /* business */,
 				0F224420188E83EF00272B86 /* store */,
@@ -780,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F32DFA1187D6A3D0090B681 /* CPADPresentationViewController.m in Sources */,
+				0F2CDC5718FA5AB50003F254 /* CPViewControllerCategory.m in Sources */,
 				BC3EF66F18EFB59800E9A416 /* MKNetworkEngine.m in Sources */,
 				0FA93A19187AC03900A954CF /* main.m in Sources */,
 				0F1E38AE18910E7C0034E2E7 /* CPToast.m in Sources */,
