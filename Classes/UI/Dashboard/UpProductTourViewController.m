@@ -9,7 +9,8 @@
 #import "UpProductTourViewController.h"
 #import "DDPageControl.h"
 #import "CPValueUtility.h"
-//#import "UIColor+plist.h"
+#import "UIColor+plist.h"
+#import "UIButton+UnionPay.h"
 //#import "UPConfig.h"
 
 @interface UpProductTourViewController () {

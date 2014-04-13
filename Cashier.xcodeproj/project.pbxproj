@@ -12,6 +12,27 @@
 		0FA93A0D187AC03900A954CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA93A0C187AC03900A954CF /* Foundation.framework */; };
 		0FA93A0F187AC03900A954CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA93A0E187AC03900A954CF /* CoreGraphics.framework */; };
 		0FA93A11187AC03900A954CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA93A10187AC03900A954CF /* UIKit.framework */; };
+		BC21B57418FA72A300D927DC /* UIButton+UnionPay.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B56B18FA72A300D927DC /* UIButton+UnionPay.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC21B57518FA72A300D927DC /* UIFont+UnionPay.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B56D18FA72A300D927DC /* UIFont+UnionPay.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC21B57618FA72A300D927DC /* UIImageView+Padding.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B56F18FA72A300D927DC /* UIImageView+Padding.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC21B57818FA72A300D927DC /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B57318FA72A300D927DC /* UIPlaceHolderTextView.m */; };
+		BC21B57C18FA732000D927DC /* colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC21B57A18FA732000D927DC /* colors.plist */; };
+		BC21B57D18FA732000D927DC /* fonts.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC21B57B18FA732000D927DC /* fonts.plist */; };
+		BC21B59218FA738E00D927DC /* 橙色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58218FA738E00D927DC /* 橙色@2x.png */; };
+		BC21B59318FA738E00D927DC /* 橙色按下@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58318FA738E00D927DC /* 橙色按下@2x.png */; };
+		BC21B59418FA738E00D927DC /* 淡蓝色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58418FA738E00D927DC /* 淡蓝色@2x.png */; };
+		BC21B59518FA738E00D927DC /* 淡蓝色按下@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58518FA738E00D927DC /* 淡蓝色按下@2x.png */; };
+		BC21B59618FA738E00D927DC /* 灰色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58618FA738E00D927DC /* 灰色@2x.png */; };
+		BC21B59718FA738E00D927DC /* 灰色按下@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58718FA738E00D927DC /* 灰色按下@2x.png */; };
+		BC21B59818FA738E00D927DC /* 白色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58818FA738E00D927DC /* 白色@2x.png */; };
+		BC21B59918FA738E00D927DC /* 红色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58918FA738E00D927DC /* 红色@2x.png */; };
+		BC21B59A18FA738E00D927DC /* 红色按下@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58A18FA738E00D927DC /* 红色按下@2x.png */; };
+		BC21B59B18FA738E00D927DC /* 绿色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58B18FA738E00D927DC /* 绿色@2x.png */; };
+		BC21B59C18FA738E00D927DC /* 绿色按下@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58C18FA738E00D927DC /* 绿色按下@2x.png */; };
+		BC21B59D18FA738E00D927DC /* 蓝色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58D18FA738E00D927DC /* 蓝色@2x.png */; };
+		BC21B59E18FA738E00D927DC /* 蓝色按下@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC21B58E18FA738E00D927DC /* 蓝色按下@2x.png */; };
+		BC21B5A118FA741800D927DC /* UIColor+plist.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B5A018FA741800D927DC /* UIColor+plist.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC21B5A218FA746100D927DC /* UpProductTourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F78018FA6DED00612BBB /* UpProductTourViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC22F6FD18FA61A200612BBB /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F64818FA61A100612BBB /* NSData+MKBase64.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC22F6FE18FA61A200612BBB /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F64A18FA61A100612BBB /* NSDate+RFC1123.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC22F6FF18FA61A200612BBB /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F64C18FA61A100612BBB /* NSDictionary+RequestEncoding.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -25,8 +46,8 @@
 		BC22F70718FA61A200612BBB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F65E18FA61A100612BBB /* Reachability.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC22F70818FA61A200612BBB /* CPResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66218FA61A100612BBB /* CPResourceManager.m */; };
 		BC22F70918FA61A200612BBB /* CPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66618FA61A100612BBB /* CPAppDelegate.m */; };
-		BC22F70A18FA61A200612BBB /* NSObject+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66918FA61A100612BBB /* NSObject+UPJSON.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		BC22F70B18FA61A200612BBB /* NSString+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66B18FA61A100612BBB /* NSString+UPJSON.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BC22F70A18FA61A200612BBB /* NSObject+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66918FA61A100612BBB /* NSObject+UPJSON.m */; };
+		BC22F70B18FA61A200612BBB /* NSString+UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66B18FA61A100612BBB /* NSString+UPJSON.m */; };
 		BC22F70C18FA61A200612BBB /* UPJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66D18FA61A100612BBB /* UPJSON.m */; };
 		BC22F70D18FA61A200612BBB /* UPJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F66F18FA61A100612BBB /* UPJsonBase.m */; };
 		BC22F70E18FA61A200612BBB /* UPJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F67118FA61A100612BBB /* UPJsonParser.m */; };
@@ -111,6 +132,31 @@
 		0FA93A0E187AC03900A954CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0FA93A10187AC03900A954CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FA93A2E187AC03A00A954CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BC21B56A18FA72A300D927DC /* UIButton+UnionPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+UnionPay.h"; sourceTree = "<group>"; };
+		BC21B56B18FA72A300D927DC /* UIButton+UnionPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+UnionPay.m"; sourceTree = "<group>"; };
+		BC21B56C18FA72A300D927DC /* UIFont+UnionPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+UnionPay.h"; sourceTree = "<group>"; };
+		BC21B56D18FA72A300D927DC /* UIFont+UnionPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+UnionPay.m"; sourceTree = "<group>"; };
+		BC21B56E18FA72A300D927DC /* UIImageView+Padding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Padding.h"; sourceTree = "<group>"; };
+		BC21B56F18FA72A300D927DC /* UIImageView+Padding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Padding.m"; sourceTree = "<group>"; };
+		BC21B57218FA72A300D927DC /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		BC21B57318FA72A300D927DC /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		BC21B57A18FA732000D927DC /* colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colors.plist; sourceTree = "<group>"; };
+		BC21B57B18FA732000D927DC /* fonts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fonts.plist; sourceTree = "<group>"; };
+		BC21B58218FA738E00D927DC /* 橙色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "橙色@2x.png"; sourceTree = "<group>"; };
+		BC21B58318FA738E00D927DC /* 橙色按下@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "橙色按下@2x.png"; sourceTree = "<group>"; };
+		BC21B58418FA738E00D927DC /* 淡蓝色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "淡蓝色@2x.png"; sourceTree = "<group>"; };
+		BC21B58518FA738E00D927DC /* 淡蓝色按下@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "淡蓝色按下@2x.png"; sourceTree = "<group>"; };
+		BC21B58618FA738E00D927DC /* 灰色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "灰色@2x.png"; sourceTree = "<group>"; };
+		BC21B58718FA738E00D927DC /* 灰色按下@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "灰色按下@2x.png"; sourceTree = "<group>"; };
+		BC21B58818FA738E00D927DC /* 白色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白色@2x.png"; sourceTree = "<group>"; };
+		BC21B58918FA738E00D927DC /* 红色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红色@2x.png"; sourceTree = "<group>"; };
+		BC21B58A18FA738E00D927DC /* 红色按下@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红色按下@2x.png"; sourceTree = "<group>"; };
+		BC21B58B18FA738E00D927DC /* 绿色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "绿色@2x.png"; sourceTree = "<group>"; };
+		BC21B58C18FA738E00D927DC /* 绿色按下@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "绿色按下@2x.png"; sourceTree = "<group>"; };
+		BC21B58D18FA738E00D927DC /* 蓝色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蓝色@2x.png"; sourceTree = "<group>"; };
+		BC21B58E18FA738E00D927DC /* 蓝色按下@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蓝色按下@2x.png"; sourceTree = "<group>"; };
+		BC21B59F18FA741800D927DC /* UIColor+plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+plist.h"; sourceTree = "<group>"; };
+		BC21B5A018FA741800D927DC /* UIColor+plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+plist.m"; sourceTree = "<group>"; };
 		BC22F64118FA61A100612BBB /* Cashier-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cashier-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BC22F64218FA61A100612BBB /* Cashier-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cashier-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		BC22F64718FA61A100612BBB /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
@@ -335,6 +381,35 @@
 			path = Cashier;
 			sourceTree = "<group>";
 		};
+		BC21B57918FA732000D927DC /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				BC21B57A18FA732000D927DC /* colors.plist */,
+				BC21B57B18FA732000D927DC /* fonts.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		BC21B57E18FA738E00D927DC /* 通用 */ = {
+			isa = PBXGroup;
+			children = (
+				BC21B58218FA738E00D927DC /* 橙色@2x.png */,
+				BC21B58318FA738E00D927DC /* 橙色按下@2x.png */,
+				BC21B58418FA738E00D927DC /* 淡蓝色@2x.png */,
+				BC21B58518FA738E00D927DC /* 淡蓝色按下@2x.png */,
+				BC21B58618FA738E00D927DC /* 灰色@2x.png */,
+				BC21B58718FA738E00D927DC /* 灰色按下@2x.png */,
+				BC21B58818FA738E00D927DC /* 白色@2x.png */,
+				BC21B58918FA738E00D927DC /* 红色@2x.png */,
+				BC21B58A18FA738E00D927DC /* 红色按下@2x.png */,
+				BC21B58B18FA738E00D927DC /* 绿色@2x.png */,
+				BC21B58C18FA738E00D927DC /* 绿色按下@2x.png */,
+				BC21B58D18FA738E00D927DC /* 蓝色@2x.png */,
+				BC21B58E18FA738E00D927DC /* 蓝色按下@2x.png */,
+			);
+			path = "通用";
+			sourceTree = "<group>";
+		};
 		BC22F64318FA61A100612BBB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +574,7 @@
 		BC22F6D818FA61A200612BBB /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC21B57918FA732000D927DC /* Plist */,
 				BC22F6D918FA61A200612BBB /* DB */,
 				BC22F6DB18FA61A200612BBB /* docs */,
 				BC22F6DE18FA61A200612BBB /* images */,
@@ -526,6 +602,7 @@
 		BC22F6DE18FA61A200612BBB /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BC21B57E18FA738E00D927DC /* 通用 */,
 				BC22F6DF18FA61A200612BBB /* bars */,
 				BC22F6E818FA61A200612BBB /* bg_inputbox.png */,
 				BC22F6E918FA61A200612BBB /* buttons */,
@@ -638,6 +715,16 @@
 		BC22F76C18FA6DED00612BBB /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BC21B59F18FA741800D927DC /* UIColor+plist.h */,
+				BC21B5A018FA741800D927DC /* UIColor+plist.m */,
+				BC21B56A18FA72A300D927DC /* UIButton+UnionPay.h */,
+				BC21B56B18FA72A300D927DC /* UIButton+UnionPay.m */,
+				BC21B56C18FA72A300D927DC /* UIFont+UnionPay.h */,
+				BC21B56D18FA72A300D927DC /* UIFont+UnionPay.m */,
+				BC21B56E18FA72A300D927DC /* UIImageView+Padding.h */,
+				BC21B56F18FA72A300D927DC /* UIImageView+Padding.m */,
+				BC21B57218FA72A300D927DC /* UIPlaceHolderTextView.h */,
+				BC21B57318FA72A300D927DC /* UIPlaceHolderTextView.m */,
 				BC22F76D18FA6DED00612BBB /* CPBaseViewController.h */,
 				BC22F76E18FA6DED00612BBB /* CPBaseViewController.m */,
 				BC22F76F18FA6DED00612BBB /* CPCategoryViewController.h */,
@@ -790,7 +877,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC21B59618FA738E00D927DC /* 灰色@2x.png in Resources */,
 				BC22F75518FA61A200612BBB /* recommend_1.jpg in Resources */,
+				BC21B59218FA738E00D927DC /* 橙色@2x.png in Resources */,
 				BC22F75018FA61A200612BBB /* delete.png in Resources */,
 				BC22F74F18FA61A200612BBB /* cut.png in Resources */,
 				BC22F74818FA61A200612BBB /* top_navigation_infoicon_highlighted.png in Resources */,
@@ -798,28 +887,41 @@
 				BC22F74C18FA61A200612BBB /* add.png in Resources */,
 				BC22F75A18FA61A200612BBB /* Default.png in Resources */,
 				BC22F73E18FA61A200612BBB /* git-credential-osxkeychain in Resources */,
+				BC21B59B18FA738E00D927DC /* 绿色@2x.png in Resources */,
+				BC21B59918FA738E00D927DC /* 红色@2x.png in Resources */,
 				BC22F74518FA61A200612BBB /* top_navigation_back_highlighted.png in Resources */,
+				BC21B59A18FA738E00D927DC /* 红色按下@2x.png in Resources */,
 				BC22F75918FA61A200612BBB /* recommend_5.png in Resources */,
 				BC22F75618FA61A200612BBB /* recommend_2.jpg in Resources */,
 				BC22F74018FA61A200612BBB /* beaver.sqlite in Resources */,
 				BC22F75818FA61A200612BBB /* recommend_4.jpg in Resources */,
 				BC22F75118FA61A200612BBB /* grayBtn.png in Resources */,
+				BC21B59718FA738E00D927DC /* 灰色按下@2x.png in Resources */,
 				BC22F74918FA61A200612BBB /* top_navigation_menuicon.png in Resources */,
+				BC21B57D18FA732000D927DC /* fonts.plist in Resources */,
 				BC22F75418FA61A200612BBB /* File7.jpg in Resources */,
 				BC22F73D18FA61A200612BBB /* InfoPlist.strings in Resources */,
 				BC22F75218FA61A200612BBB /* greenBtn.png in Resources */,
 				BC22F74318FA61A200612BBB /* NavigationBarBG.png in Resources */,
 				BC22F7B218FA6DED00612BBB /* UpProductTourViewController.xib in Resources */,
+				BC21B59E18FA738E00D927DC /* 蓝色按下@2x.png in Resources */,
 				BC22F74D18FA61A200612BBB /* btn_down.png in Resources */,
+				BC21B59518FA738E00D927DC /* 淡蓝色按下@2x.png in Resources */,
 				BC22F75718FA61A200612BBB /* recommend_3.jpg in Resources */,
 				BC22F74718FA61A200612BBB /* top_navigation_infoicon.png in Resources */,
+				BC21B57C18FA732000D927DC /* colors.plist in Resources */,
 				BC22F74618FA61A200612BBB /* top_navigation_background.png in Resources */,
 				BC22F74E18FA61A200612BBB /* btn_up.png in Resources */,
 				BC22F74A18FA61A200612BBB /* top_navigation_menuicon_highlighted.png in Resources */,
+				BC21B59318FA738E00D927DC /* 橙色按下@2x.png in Resources */,
 				BC22F74418FA61A200612BBB /* top_navigation_back.png in Resources */,
 				BC22F74B18FA61A200612BBB /* bg_inputbox.png in Resources */,
+				BC21B59818FA738E00D927DC /* 白色@2x.png in Resources */,
 				BC22F74118FA61A200612BBB /* CPImageResource.plist in Resources */,
 				BC22F75318FA61A200612BBB /* Display.png in Resources */,
+				BC21B59418FA738E00D927DC /* 淡蓝色@2x.png in Resources */,
+				BC21B59C18FA738E00D927DC /* 绿色按下@2x.png in Resources */,
+				BC21B59D18FA738E00D927DC /* 蓝色@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,16 +950,20 @@
 				BC22F70818FA61A200612BBB /* CPResourceManager.m in Sources */,
 				BC22F7A818FA6DED00612BBB /* CPViewAnimations.m in Sources */,
 				BC22F7BC18FA6DED00612BBB /* CPToast.m in Sources */,
+				BC21B57818FA72A300D927DC /* UIPlaceHolderTextView.m in Sources */,
+				BC21B57618FA72A300D927DC /* UIImageView+Padding.m in Sources */,
 				BC22F7B318FA6DED00612BBB /* CPAddGoodsCell.m in Sources */,
 				BC22F70318FA61A200612BBB /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				BC22F7C118FA6DED00612BBB /* CPStoreViewController.m in Sources */,
 				BC22F73718FA61A200612BBB /* CPDataBaseManager.m in Sources */,
 				BC22F7C018FA6DED00612BBB /* CPStoreInfoViewController.m in Sources */,
 				BC22F7B418FA6DED00612BBB /* CPAlertView.m in Sources */,
+				BC21B5A218FA746100D927DC /* UpProductTourViewController.m in Sources */,
 				BC22F7B018FA6DED00612BBB /* TnPreviewPagingScrollView.m in Sources */,
 				BC22F7A418FA6DED00612BBB /* CPGetBackPWDViewController.m in Sources */,
 				BC22F70E18FA61A200612BBB /* UPJsonParser.m in Sources */,
 				BC22F70A18FA61A200612BBB /* NSObject+UPJSON.m in Sources */,
+				BC21B5A118FA741800D927DC /* UIColor+plist.m in Sources */,
 				BC22F71018FA61A200612BBB /* UPJsonWriter.m in Sources */,
 				BC22F7B918FA6DED00612BBB /* CPImagePickerCell.m in Sources */,
 				BC22F73918FA61A200612BBB /* CPViewTools.m in Sources */,
@@ -877,6 +983,7 @@
 				BC22F73818FA61A200612BBB /* CPValueUtility.m in Sources */,
 				BC22F70118FA61A200612BBB /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				BC22F70D18FA61A200612BBB /* UPJsonBase.m in Sources */,
+				BC21B57518FA72A300D927DC /* UIFont+UnionPay.m in Sources */,
 				BC22F70F18FA61A200612BBB /* UPJsonService.m in Sources */,
 				BC22F70518FA61A200612BBB /* MKNetworkEngine.m in Sources */,
 				BC22F6FE18FA61A200612BBB /* NSDate+RFC1123.m in Sources */,
@@ -884,6 +991,7 @@
 				BC22F7AB18FA6DED00612BBB /* CPBusinessViewController.m in Sources */,
 				BC22F7B818FA6DED00612BBB /* CPGoodsDetailCell.m in Sources */,
 				BC22F7A518FA6DED00612BBB /* CPLoginViewController.m in Sources */,
+				BC21B57418FA72A300D927DC /* UIButton+UnionPay.m in Sources */,
 				BC22F73618FA61A200612BBB /* CPBackgroundDowner.m in Sources */,
 				BC22F7B618FA6DED00612BBB /* CPGoodsCategoryCell.m in Sources */,
 				BC22F7B718FA6DED00612BBB /* CPGoodsCollection.m in Sources */,

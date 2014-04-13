@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>current_location_button</key>
+	<string>HelveticaNeue-Bold 15</string>
+	<key>select_location_button</key>
+	<string>HelveticaNeue 15</string>
+	<key>generic_button_title</key>
+	<string>HelveticaNeue 15</string>
+	<key>places_button_text</key>
+	<string>HelveticaNeue 12</string>
+	<key>route_choice_button_time</key>
+	<string>HelveticaNeue-Bold 16</string>
+	<key>route_choice_button_time_iPad</key>
+	<string>HelveticaNeue-Bold 22</string>
+	<key>route_details_button_title</key>
+	<string>HelveticaNeue 11</string>
+	<key>search_near</key>
+	<string>HelveticaNeue 14</string>
+	<key>sort_button_title</key>
+	<string>HelveticaNeue 12</string>
+	<key>detour_button_title</key>
+	<string>HelveticaNeue 13</string>
+	<key>route_details_button_title_iPad</key>
+	<string>HelveticaNeue 16</string>
+	<key>places_button_text_iPad</key>
+	<string>HelveticaNeue 24</string>
+	<key>poi_bubble_address</key>
+	<string>HelveticaNeue-Bold 12</string>
+	<key>poi_bubble_address_iPad</key>
+	<string>HelveticaNeue 20</string>
+</dict>
+</plist>
