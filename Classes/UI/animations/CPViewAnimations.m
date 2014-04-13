@@ -78,15 +78,38 @@
     }];
 }
 
-+ (CABasicAnimation *)opacityAnimationFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue
++ (CABasicAnimation *)opacityAnimationFromValue:(CGFloat)fromValue
+                                        toValue:(CGFloat)toValue
+                                        durtion:(CGFloat)duration
+
 {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    animation.duration = kSystemAnimationDuration;
+    animation.duration = duration;
     animation.removedOnCompletion = YES;
     animation.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseOut];
     animation.fillMode = kCAFillModeForwards;
     animation.fromValue = [NSNumber numberWithInt:fromValue];
     animation.toValue = [NSNumber numberWithInt:toValue];
+    
+    return animation;
+}
+
++ (CAKeyframeAnimation *)scaleAnimationFromValue:(CGFloat)fromValue
+                                         toValue:(CGFloat)toValue
+                                        duration:(CGFloat)duration
+{
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    animation.duration = duration;
+    animation.delegate = self;
+    animation.removedOnCompletion = YES;
+    animation.autoreverses = NO;
+    animation.fillMode = kCAFillModeForwards;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseOut];
+    
+    NSMutableArray *values = [NSMutableArray array];
+    [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(fromValue, fromValue, 1.0)]];
+    [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(toValue, toValue, 1.0)]];
+    animation.values = values;
     
     return animation;
 }

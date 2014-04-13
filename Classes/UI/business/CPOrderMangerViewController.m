@@ -568,6 +568,10 @@
         ret = NO;
     }
     
+    if ((indexPath.row == _maxRowNumbers-1 && _maxRowNumbers >= 1)) {
+        ret = NO;
+    }
+    
     if (ret)
     {
         [self hideEditView];

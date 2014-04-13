@@ -11,6 +11,7 @@
 
 
 #define kSystemAnimationDuration 0.25
+#define kFastSystemAnimationDuration 0.15
 
 
 typedef void (^UIAnimationBlock)();
@@ -38,6 +39,12 @@ typedef void (^UIAnimationBlock)();
                     animationBlock:(UIAnimationBlock)animation
                         endBlock:(UIAnimationBlock)completion;
 
-+ (CABasicAnimation *)opacityAnimationFromValue:(CGFloat)fromValue toValue:(CGFloat)toValue;
++ (CABasicAnimation *)opacityAnimationFromValue:(CGFloat)fromValue
+                                        toValue:(CGFloat)toValue
+                                        durtion:(CGFloat)duration;
+
++ (CAKeyframeAnimation *)scaleAnimationFromValue:(CGFloat)fromValue
+                                         toValue:(CGFloat)toValue
+                                        duration:(CGFloat)duration;
 
 @end

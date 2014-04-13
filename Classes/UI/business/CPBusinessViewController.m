@@ -6,12 +6,13 @@
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
+
 #import "CPBusinessViewController.h"
 #import "CPGoodsCollection.h"
 #import "CPGoodsCountIndicator.h"
 #import "CPViewAnimations.h"
 #import "CPConstDefine.h"
-
+#import "UIViewController+SubView.h"
 #import "CPGoodsCategoryCell.h"
 #import "CPDataBaseManager.h"
 
@@ -21,7 +22,7 @@
 
 #define kCarWidth    200
 #define kCarHeight   75
-#define kOrderMargin 130
+#define kOrderMargin 230
 #define kOrderDuration 0.25
 
 #define kNullPrice    @"0.00"
@@ -286,34 +287,8 @@
 
 - (void)showOrderManageView
 {
-    _orderWillDismiss = NO;
-    [self.navigationController.view addSubview:self.orderNavigationController.view];
-    [self.navigationController.view insertSubview:self.orderMaskView belowSubview:self.orderNavigationController.view];
-    [self.orderNavigationController.view.layer addAnimation:[self scaleAnimation] forKey:@"transform.scale"];
-    //[self.orderNavigationController.view.layer addAnimation:[self opacityAnimationFromValue:0 toValue:1] forKey:@"opacity"];
-    //[self.orderMaskView.layer addAnimation:[self opacityAnimationFromValue:0 toValue:0.6] forKey:nil];
-    
-    self.orderMaskView.alpha = 0;
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.15];
-    self.orderMaskView.alpha = 0.3;
-    
-    [UIView commitAnimations];
-    
+    [self addMiddlePresentationView:self.orderNavigationController.view];
     [self.orderManageVC reloadOrdersViewWithOrders:self.curOrderList];
-    return;
-    
-    
-    __block UIViewController *c = [self.orderNavigationController.viewControllers objectAtIndex:0];
-    __block CPBusinessViewController *blockSelf = self;
-    [CPViewAnimations animationWithDuration:kOrderDuration endAction:nil target:nil block:^{
-        blockSelf.orderNavigationController.view.transform = CGAffineTransformMakeScale(1, 1);
-        blockSelf.orderNavigationController.navigationBar.alpha = 1;
-        blockSelf.orderNavigationController.view.alpha = 1;
-        c.view.alpha = 1;
-        blockSelf.orderMaskView.alpha = 0.3;
-    }];
-    
 }
 
 - (void)hideOrderManageView
@@ -376,20 +351,9 @@
 
 - (void)initOrderManageView
 {
-    //
-    self.orderMaskView = [CPCocoaSubViews maskViewWithFrame:self.navigationController.view.bounds];
-    
-    self.orderMaskView.alpha = 0.3;
-    
-    //
-    CGFloat width = FScreenWidth - kOrderMargin*2;
-    CGFloat ox = (FScreenWidth - width)/2;
-    _orderFullFrame = CGRectMake(ox, 0, width, FScreenHeight);
-    
     self.orderManageVC = [[[CPOrderMangerViewController alloc] init] autorelease];
     self.orderManageVC.delegate = self;
     self.orderNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.orderManageVC] autorelease];
-    self.orderNavigationController.view.frame = _orderFullFrame;
     self.orderNavigationController.view.backgroundColor = [UIColor whiteColor];
     
 }
@@ -415,6 +379,10 @@
 
 - (void)orderManagerWillDismiss
 {
+    
+    [self removeMiddlePresentationView:self.orderNavigationController.view];
+    return;
+    
     _orderWillDismiss = YES;
     [self.orderNavigationController.view.layer addAnimation:[self scaleDisappearAnimation] forKey:nil];
     //[self.orderNavigationController.view.layer addAnimation:[self opacityAnimationFromValue:1 toValue:0] forKey:nil];

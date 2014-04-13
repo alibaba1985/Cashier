@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2CDC6018FA807D0003F254 /* UIViewController+SubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CDC5F18FA807D0003F254 /* UIViewController+SubView.m */; };
 		0F3F70DF1893AC52005D53B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3F70DE1893AC52005D53B9 /* CoreLocation.framework */; };
 		0F47D7D818AB099D001717EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F47D7D718AB099D001717EC /* libsqlite3.dylib */; };
 		0FA93A0D187AC03900A954CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA93A0C187AC03900A954CF /* Foundation.framework */; };
@@ -125,6 +126,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F2CDC5E18FA807D0003F254 /* UIViewController+SubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SubView.h"; sourceTree = "<group>"; };
+		0F2CDC5F18FA807D0003F254 /* UIViewController+SubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SubView.m"; sourceTree = "<group>"; };
 		0F3F70DE1893AC52005D53B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0F47D7D718AB099D001717EC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		0FA93A09187AC03900A954CF /* Cashier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashier.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -729,6 +732,8 @@
 				BC22F76E18FA6DED00612BBB /* CPBaseViewController.m */,
 				BC22F76F18FA6DED00612BBB /* CPCategoryViewController.h */,
 				BC22F77018FA6DED00612BBB /* CPCategoryViewController.m */,
+				0F2CDC5E18FA807D0003F254 /* UIViewController+SubView.h */,
+				0F2CDC5F18FA807D0003F254 /* UIViewController+SubView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -952,6 +957,7 @@
 				BC22F7BC18FA6DED00612BBB /* CPToast.m in Sources */,
 				BC21B57818FA72A300D927DC /* UIPlaceHolderTextView.m in Sources */,
 				BC21B57618FA72A300D927DC /* UIImageView+Padding.m in Sources */,
+				0F2CDC6018FA807D0003F254 /* UIViewController+SubView.m in Sources */,
 				BC22F7B318FA6DED00612BBB /* CPAddGoodsCell.m in Sources */,
 				BC22F70318FA61A200612BBB /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				BC22F7C118FA6DED00612BBB /* CPStoreViewController.m in Sources */,
