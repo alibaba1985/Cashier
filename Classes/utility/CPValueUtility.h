@@ -38,4 +38,6 @@
 
 + (void)debugViewInfoByParentView:(UIView *)parentView;
 
++ (void)navigationController:(UINavigationController *)navigationController popGestureRecognizerEnable:(BOOL)enable;
+
 @end

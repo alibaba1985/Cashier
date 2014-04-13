@@ -157,4 +157,11 @@
     DLog(@"--------------------");
 }
 
++ (void)navigationController:(UINavigationController *)navigationController popGestureRecognizerEnable:(BOOL)enable
+{
+    if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        navigationController.interactivePopGestureRecognizer.enabled = enable;
+    }
+}
+
 @end

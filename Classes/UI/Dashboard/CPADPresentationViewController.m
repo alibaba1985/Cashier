@@ -233,8 +233,6 @@
     }];
 }
 
-
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     _currentPage = scrollView.contentOffset.x / FScreenWidth;
@@ -252,10 +250,8 @@
         CGRect lFrame = CGRectMake(FScreenWidth*4 + (FScreenWidth - kButtonWidth)/2, FScreenHeight+kButtonHeight*1.5, kButtonWidth, kButtonHeight);
         
         [CPViewAnimations animationWithDuration:kSystemAnimationDuration endAction:@selector(secondAnimationDidStop) target:self block:^{
-            
             _loginButton.frame = lFrame;
         }];
-        
         
     }
 }

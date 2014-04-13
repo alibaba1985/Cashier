@@ -8,10 +8,9 @@
 
 #import "UpProductTourViewController.h"
 #import "DDPageControl.h"
-#import "UPUtils.h"
-#import "UIButton+UnionPay.h"
-#import "UIColor+plist.h"
-#import "UPConfig.h"
+#import "CPValueUtility.h"
+//#import "UIColor+plist.h"
+//#import "UPConfig.h"
 
 @interface UpProductTourViewController () {
     DDPageControl * _pageControl;
@@ -62,14 +61,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [UPUtils navigationController:self.navigationController popGestureRecognizerEnable:NO];
+    [CPValueUtility navigationController:self.navigationController popGestureRecognizerEnable:NO];
 
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [UPUtils navigationController:self.navigationController popGestureRecognizerEnable:YES];
+    [CPValueUtility navigationController:self.navigationController popGestureRecognizerEnable:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -104,12 +103,7 @@
         
         // Image size is fit for iPhone5.
         NSString * picName;
-        if([UPUtils iPhone5]) {
-            picName = [NSString stringWithFormat:@"iOS%d-568@2x", i];
-        }
-        else {
-            picName = [NSString stringWithFormat:@"iOS%d@2x", i];
-        }
+        picName = [NSString stringWithFormat:@"iOS%d@2x", i];
         
         NSString * path = [[NSBundle mainBundle] pathForResource:picName ofType:@"png"];
         UIImage * image = [[UIImage alloc] initWithContentsOfFile:path];
@@ -130,7 +124,7 @@
     CGRect bounds = [[UIScreen mainScreen] bounds];
     
     CGFloat btnBottomTag;
-    if([UPUtils iPhone5]) {
+    if(NO/*[UPUtils iPhone5]*/) {
         btnBottomTag = 21.0f;
     }
     else {
