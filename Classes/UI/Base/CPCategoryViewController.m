@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "UIViewController+SubView.h"
+#import "CPCategoryViewController.h"
 #import "WLSideMenuItem.h"
 #import "WLSideMenuViewController.h"
 #import "CPStoreViewController.h"
