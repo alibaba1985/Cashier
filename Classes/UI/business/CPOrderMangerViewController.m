@@ -211,12 +211,13 @@
 
 - (void)hideEditView
 {
-    
-    [_orderTable beginUpdates];
     NSArray *array = [NSArray arrayWithObjects:self.curIndexPath, nil];
     self.curIndexPath = nil;
+    [_orderTable beginUpdates];
     [_orderTable deleteRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];
     [_orderTable endUpdates];
+    
+    
 }
 
 
@@ -553,7 +554,7 @@
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleDelete;
+    return (UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert);
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -564,6 +565,11 @@
         ret = NO;
     }
     
+    if (ret)
+    {
+        [self hideEditView];
+    }
+    
     return ret;
 }
 
@@ -571,43 +577,57 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
+        NSMutableArray *deletaArray = [NSMutableArray array];
         NSInteger index = indexPath.row;
-        
-        if (self.curIndexPath != nil) {
-            if (self.curIndexPath.row < self.orderList.count)
-            {
-                if (indexPath.row < self.curIndexPath.row - 1) {
-                    index = indexPath.row;
-                    NSIndexPath *newPath = [NSIndexPath indexPathForRow:self.curIndexPath.row-1 inSection:self.curIndexPath.section];
-                    self.curIndexPath = newPath;
-                    
-                }
-                else if (indexPath.row == self.curIndexPath.row - 1)
-                {
-                    self.curIndexPath = nil;
-                }
-                
-                else if (indexPath.row > self.curIndexPath.row)
-                {
-                    index = indexPath.row-1;
-                    
-                }
-                
-            }
-            
-        }
+        NSIndexPath *deleteIndexPath = indexPath;
+//        if (self.curIndexPath != nil) {
+//            if (self.curIndexPath.row < self.orderList.count)
+//            {
+//                if (indexPath.row < self.curIndexPath.row - 1) {
+//                    deleteIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+//                    [deletaArray addObject:deleteIndexPath];
+//                    NSIndexPath *newPath = [NSIndexPath indexPathForRow:self.curIndexPath.row-1 inSection:self.curIndexPath.section];
+//                    self.curIndexPath = newPath;
+//                    
+//                }
+//                else if (indexPath.row == self.curIndexPath.row - 1)
+//                {
+//                    [deletaArray addObject:self.curIndexPath];
+//                    self.curIndexPath = nil;
+//                }
+//                
+//                else if (indexPath.row > self.curIndexPath.row)
+//                {
+//                    index = indexPath.row-1;
+//                    deleteIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
+//                }
+//                
+//            }
+//            else
+//            {
+//                [deletaArray addObject:self.curIndexPath];
+//                self.curIndexPath = nil;
+//            }
+//            
+//        }
         
         NSMutableDictionary *dic = [self.orderList objectAtIndex:index];
         CGFloat totalPrice = [[dic objectForKey:kGoodsTotalPrice] floatValue];
     
+        [_orderTable beginUpdates];
         [self.orderList removeObjectAtIndex:index];
-        [_orderTable reloadData];
+        [_orderTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:deleteIndexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [_orderTable endUpdates];
         [self.delegate orderTotalPriceDidChange:-totalPrice];
         
         if (self.orderList.count == 0) {
             self.curIndexPath = nil;
             [self.delegate orderManagerWillDismiss];
         }
+        
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
         
     }
 }

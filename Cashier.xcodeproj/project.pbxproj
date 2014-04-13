@@ -83,7 +83,7 @@
 		BC22F7AD18FA6DED00612BBB /* CPGoodsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77718FA6DED00612BBB /* CPGoodsInfoViewController.m */; };
 		BC22F7AE18FA6DED00612BBB /* CPOrderMangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77918FA6DED00612BBB /* CPOrderMangerViewController.m */; };
 		BC22F7AF18FA6DED00612BBB /* DDPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77C18FA6DED00612BBB /* DDPageControl.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		BC22F7B018FA6DED00612BBB /* TnPreviewPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77E18FA6DED00612BBB /* TnPreviewPagingScrollView.m */; };
+		BC22F7B018FA6DED00612BBB /* TnPreviewPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77E18FA6DED00612BBB /* TnPreviewPagingScrollView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		BC22F7B218FA6DED00612BBB /* UpProductTourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC22F78118FA6DED00612BBB /* UpProductTourViewController.xib */; };
 		BC22F7B318FA6DED00612BBB /* CPAddGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F78418FA6DED00612BBB /* CPAddGoodsCell.m */; };
 		BC22F7B418FA6DED00612BBB /* CPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F78618FA6DED00612BBB /* CPAlertView.m */; };

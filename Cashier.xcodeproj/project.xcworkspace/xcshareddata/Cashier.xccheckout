@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A5AC4B1B-5A7B-4116-BF42-77141D9C9E9C</string>
+	<string>83EB74FC-E808-4FD5-93AC-37F682E4FF12</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Cashier</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -17,15 +17,17 @@
 	<string>Cashier/Cashier.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5486F16D-8D58-47D3-B537-267A88BBF915</key>
+		<key>0EFD07FF-1106-43DA-8E91-62BF373EB317</key>
 		<string>../../..</string>
+		<key>5486F16D-8D58-47D3-B537-267A88BBF915</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/swalt888/Cashier.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5486F16D-8D58-47D3-B537-267A88BBF915</string>
+	<string>0EFD07FF-1106-43DA-8E91-62BF373EB317</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +37,14 @@
 			<string>5486F16D-8D58-47D3-B537-267A88BBF915</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Cashier</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0EFD07FF-1106-43DA-8E91-62BF373EB317</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GitHub</string>
 		</dict>
 	</array>
 </dict>
