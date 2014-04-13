@@ -16,9 +16,7 @@
 #import "CPMoreViewController.h"
 #import "CPStoreInfoViewController.h"
 #import "CPUnderLineButton.h"
-
-
-
+#import "CPResetPWDViewController.h"
 
 @interface CPLoginViewController ()
 {
@@ -26,14 +24,7 @@
     CPTextField *_userPassword;
 }
 
-
-- (void)loginAction:(UIButton *)button;
-
-- (void)priorAction;
-
 - (void)presentMainPages;
-
-- (void)forgetPassWordAction;
 
 @end
 
@@ -60,14 +51,6 @@
     [bgView setImage:[UIImage imageNamed:@"File7.jpg"]];
     [self.view addSubview:bgView];
     [bgView release];
-    
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"上一步" style:UIBarButtonItemStylePlain target:self action:@selector(priorAction)];
-    self.navigationItem.leftBarButtonItem = leftItem;
-    [leftItem release];
-    
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction:)];
-    self.navigationItem.rightBarButtonItem = rightItem;
-    [rightItem release];
     
     //    CGRect logoFrame = CGRectMake((FScreenWidth - kHeadLogoWidth)/2, y, kHeadLogoWidth, kHeadLogoHeight);
     //    _headLogo = [[UIImageView alloc] initWithFrame:logoFrame];
@@ -112,7 +95,7 @@
     CGSize lineSize = [title sizeWithFont:[UIFont systemFontOfSize:18]];
     CGRect lineFrame = CGRectMake((FScreenWidth - kTextFieldWidth)/2 + kTextFieldWidth - lineSize.width, y, lineSize.width, lineSize.height);
     
-    CPUnderLineButton *underLineBtn = [[CPUnderLineButton alloc] initWithFrame:lineFrame title:@"忘记密码?" font:[UIFont systemFontOfSize:18] target:self action:@selector(forgetPassWordAction)];
+    CPUnderLineButton *underLineBtn = [[CPUnderLineButton alloc] initWithFrame:lineFrame title:@"忘记密码?" font:[UIFont systemFontOfSize:18] target:self action:@selector(forgetPassWordAction:)];
     [self.view addSubview:underLineBtn];
     [underLineBtn release];
 }
@@ -124,7 +107,7 @@
 }
 
 
-- (void)loginAction:(UIButton *)button
+- (IBAction)rightBarAction:(id)sender
 {
     for (UITextField *textField in _textFieldArray) {
         if (![self checkEmptyAndIllegalForTextField:textField]) {
@@ -136,9 +119,10 @@
 }
 
 
-- (void)forgetPassWordAction
+- (void)forgetPassWordAction:(id)sender
 {
-    
+    CPResetPWDViewController * vc = [[[CPResetPWDViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)presentMainPages
@@ -182,7 +166,7 @@
 
 }
 
-- (void)priorAction
+- (IBAction)leftBarAction:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

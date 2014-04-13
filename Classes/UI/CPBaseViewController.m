@@ -17,10 +17,10 @@
 
 @interface CPBaseViewController ()
 {
-    
     BOOL _keyboardDidShow;
     CPToast *_toast;
-    
+    UIBarButtonItem * _leftItem;
+    UIBarButtonItem * _rightItem;
 }
 
 
@@ -66,11 +66,9 @@
     return self;
 }
 
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
     _originalFrame = self.view.frame;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyBoardWillChangeFrame:)
@@ -95,12 +93,13 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     //UIView设置阴影
     [self.view.layer setShadowOffset:CGSizeMake(5, 3)];
     [self.view.layer setShadowRadius:5];
     [self.view.layer setShadowOpacity:0.6];
     [self.view.layer setShadowColor:[UIColor blackColor].CGColor];
+    
+    [self addNavigationBar];
     
     if ([CPValueUtility iOS7Device]) {
         [self setNeedsStatusBarAppearanceUpdate];
@@ -126,13 +125,7 @@
     //[self addTapGesture];
     if ([CPValueUtility iOS7Device]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.navigationController.navigationBar.translucent = NO;
-        self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -320,6 +313,27 @@
     if (alert.title == nil) {
 
     }
+}
+
+- (void)addNavigationBar
+{
+    _leftItem = [[[UIBarButtonItem alloc] initWithTitle:@"上一步" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarAction:)] autorelease];
+    _leftItem.tintColor = [UIColor grayColor];
+    self.navigationItem.leftBarButtonItem = _leftItem;
+    
+    _rightItem = [[[UIBarButtonItem alloc] initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarAction:)] autorelease];
+    _rightItem.tintColor = [UIColor greenColor];
+    self.navigationItem.rightBarButtonItem = _rightItem;
+}
+
+- (IBAction)leftBarAction:(id)sender
+{
+    
+}
+
+- (IBAction)rightBarAction:(id)sender
+{
+    
 }
 
 @end
