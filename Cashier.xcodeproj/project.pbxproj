@@ -98,7 +98,7 @@
 		BC22F7A718FA6DED00612BBB /* CPResetPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F76818FA6DED00612BBB /* CPResetPWDViewController.m */; };
 		BC22F7A818FA6DED00612BBB /* CPViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F76B18FA6DED00612BBB /* CPViewAnimations.m */; };
 		BC22F7A918FA6DED00612BBB /* CPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F76E18FA6DED00612BBB /* CPBaseViewController.m */; };
-		BC22F7AA18FA6DED00612BBB /* CPCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77018FA6DED00612BBB /* CPCategoryViewController.m */; };
+		BC22F7AA18FA6DED00612BBB /* UIViewController+SubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77018FA6DED00612BBB /* UIViewController+SubView.m */; };
 		BC22F7AB18FA6DED00612BBB /* CPBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77318FA6DED00612BBB /* CPBusinessViewController.m */; };
 		BC22F7AC18FA6DED00612BBB /* CPGoodsCountIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77518FA6DED00612BBB /* CPGoodsCountIndicator.m */; };
 		BC22F7AD18FA6DED00612BBB /* CPGoodsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC22F77718FA6DED00612BBB /* CPGoodsInfoViewController.m */; };
@@ -269,8 +269,8 @@
 		BC22F76B18FA6DED00612BBB /* CPViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPViewAnimations.m; sourceTree = "<group>"; };
 		BC22F76D18FA6DED00612BBB /* CPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPBaseViewController.h; sourceTree = "<group>"; };
 		BC22F76E18FA6DED00612BBB /* CPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPBaseViewController.m; sourceTree = "<group>"; };
-		BC22F76F18FA6DED00612BBB /* CPCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCategoryViewController.h; sourceTree = "<group>"; };
-		BC22F77018FA6DED00612BBB /* CPCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCategoryViewController.m; sourceTree = "<group>"; };
+		BC22F76F18FA6DED00612BBB /* UIViewController+SubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SubView.h"; sourceTree = "<group>"; };
+		BC22F77018FA6DED00612BBB /* UIViewController+SubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SubView.m"; sourceTree = "<group>"; };
 		BC22F77218FA6DED00612BBB /* CPBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPBusinessViewController.h; sourceTree = "<group>"; };
 		BC22F77318FA6DED00612BBB /* CPBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPBusinessViewController.m; sourceTree = "<group>"; };
 		BC22F77418FA6DED00612BBB /* CPGoodsCountIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPGoodsCountIndicator.h; sourceTree = "<group>"; };
@@ -727,8 +727,8 @@
 				BC21B57318FA72A300D927DC /* UIPlaceHolderTextView.m */,
 				BC22F76D18FA6DED00612BBB /* CPBaseViewController.h */,
 				BC22F76E18FA6DED00612BBB /* CPBaseViewController.m */,
-				BC22F76F18FA6DED00612BBB /* CPCategoryViewController.h */,
-				BC22F77018FA6DED00612BBB /* CPCategoryViewController.m */,
+				BC22F76F18FA6DED00612BBB /* UIViewController+SubView.h */,
+				BC22F77018FA6DED00612BBB /* UIViewController+SubView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -996,7 +996,7 @@
 				BC22F7B618FA6DED00612BBB /* CPGoodsCategoryCell.m in Sources */,
 				BC22F7B718FA6DED00612BBB /* CPGoodsCollection.m in Sources */,
 				BC22F70918FA61A200612BBB /* CPAppDelegate.m in Sources */,
-				BC22F7AA18FA6DED00612BBB /* CPCategoryViewController.m in Sources */,
+				BC22F7AA18FA6DED00612BBB /* UIViewController+SubView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

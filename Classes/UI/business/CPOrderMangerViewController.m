@@ -204,19 +204,21 @@
 - (void)showEditView
 {
     [_orderTable beginUpdates];
-    NSArray *array = [NSArray arrayWithObjects:self.curIndexPath, nil];
+    NSArray *array = [NSArray arrayWithObject:self.curIndexPath];
     [_orderTable insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];
     [_orderTable endUpdates];
 }
 
 - (void)hideEditView
 {
+    if (self.curIndexPath != nil) {
+        [_orderTable beginUpdates];
+        NSArray *array = [NSArray arrayWithObject:self.curIndexPath];
+        self.curIndexPath = nil;
+        [_orderTable deleteRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];
+        [_orderTable endUpdates];
+    }
     
-    [_orderTable beginUpdates];
-    NSArray *array = [NSArray arrayWithObjects:self.curIndexPath, nil];
-    self.curIndexPath = nil;
-    [_orderTable deleteRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];
-    [_orderTable endUpdates];
     
     
 }
