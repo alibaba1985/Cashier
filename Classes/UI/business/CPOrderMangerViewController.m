@@ -7,6 +7,8 @@
 //
 
 #import "CPOrderMangerViewController.h"
+#import "CPDataBaseMacros.h"
+#import "CPOrderInfoCell.h"
 
 #define kMargin 50
 
@@ -21,6 +23,8 @@
 #define kButtonHeight  54
 
 #define kLineWidth 0.3
+
+#define kTitleFormat @"已点：%@"
 
 @interface CPOrderMangerViewController ()
 {
@@ -45,7 +49,7 @@
 
 - (void)payBowAction:(UIButton *)button;
 
-- (void)showEditView;
+- (void)showEditViewAtIndexPath:(NSIndexPath*)indexPath;
 
 - (void)hideEditView;
 
@@ -63,18 +67,24 @@
 
 - (void)clearButtonCancelReady;
 
+- (void)tableViewReloadData;
+
+- (void)resetTitleByChange:(CGFloat)change;
+
 @end
 
 @implementation CPOrderMangerViewController
 @synthesize delegate;
 @synthesize orderList;
 @synthesize curIndexPath;
+@synthesize curTotalAmount;
 
 - (void)dealloc
 {
     self.orderList = nil;
     self.delegate = nil;
     self.curIndexPath = nil;
+    self.curTotalAmount = nil;
     
     [super dealloc];
 }
@@ -94,17 +104,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title = @"已点商品";
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
     self.navigationItem.leftBarButtonItem = item;
     [item release];
     
-    CGRect tableFrame = CGRectMake(5, 0, CGRectGetWidth(self.view.frame)-10, FScreenHeight - kNavBarHeight - kBottomHeight);
+    CGRect tableFrame = CGRectMake(kMargin, 0, CGRectGetWidth(self.view.frame)-kMargin*2, FScreenHeight - kNavBarHeight - kBottomHeight);
     _orderTable = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
     _orderTable.showsVerticalScrollIndicator = YES;
     _orderTable.backgroundColor = [UIColor clearColor];
     [_orderTable setExclusiveTouch:YES];
     _orderTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _orderTable.showsVerticalScrollIndicator = NO;
     _orderTable.dataSource = self;
     _orderTable.delegate = self;
     
@@ -150,9 +160,11 @@
 }
 
 
-- (void)reloadOrdersViewWithOrders:(NSMutableArray *)array
+- (void)reloadOrdersViewWithOrders:(NSMutableArray *)array totalAmount:(NSString *)totalAmount
 {
     self.orderList = array;
+    self.curTotalAmount = totalAmount;
+    self.title = [NSString stringWithFormat:@"已点：%@", self.curTotalAmount];
     _orderTable.alpha = 1;
     [_orderTable reloadData];
 }
@@ -201,10 +213,10 @@
     [bottom addSubview:_payNowButton];
 }
 
-- (void)showEditView
+- (void)showEditViewAtIndexPath:(NSIndexPath *)indexPath
 {
     [_orderTable beginUpdates];
-    NSArray *array = [NSArray arrayWithObject:self.curIndexPath];
+    NSArray *array = [NSArray arrayWithObject:indexPath];
     [_orderTable insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];
     [_orderTable endUpdates];
 }
@@ -249,6 +261,26 @@
     }
 }
 
+- (void)tableViewReloadData
+{
+    [_orderTable reloadData];
+}
+
+- (void)resetTitleByChange:(CGFloat )change
+{
+    if (change == INFINITY) {
+        self.curTotalAmount = @"0.00";
+    }
+    else
+    {
+        CGFloat curTotalPrice = [self.curTotalAmount floatValue];
+        curTotalPrice += change;
+        self.curTotalAmount = [NSString stringWithFormat:@"%.2f", curTotalPrice];
+    }
+    
+    NSString *title = [NSString stringWithFormat:kTitleFormat, self.curTotalAmount];
+    self.title = title;
+}
 
 #pragma mark - Button Actions
 
@@ -269,10 +301,17 @@
     CGFloat totalPrice = [[dic objectForKey:kGoodsTotalPrice] floatValue];
     
     [self.orderList removeObjectAtIndex:row];
+    NSIndexPath *deleteIndexPath = [NSIndexPath indexPathForRow:row inSection:self.curIndexPath.section];
+    NSArray *deleteArray = [NSArray arrayWithObjects:deleteIndexPath,self.curIndexPath,nil];
     self.curIndexPath = nil;
     
-    [_orderTable reloadData];
+    [_orderTable beginUpdates];
+
+    [_orderTable deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationTop];
+    [_orderTable endUpdates];
+    
     [self.delegate orderTotalPriceDidChange:-totalPrice];
+    [self resetTitleByChange:-totalPrice];
     
     if (self.orderList.count == 0) {
         [self.delegate orderManagerWillDismiss];
@@ -294,6 +333,7 @@
     
     [_orderTable reloadData];
     [self.delegate orderTotalPriceDidChange:signalPrice];
+    [self resetTitleByChange:signalPrice];
 }
 
 - (void)cutAction:(UIButton *)button
@@ -315,6 +355,7 @@
         [dic setObject:lTotalPrice forKey:kGoodsTotalPrice];
         [_orderTable reloadData];
         [self.delegate orderTotalPriceDidChange:-signalPrice];
+        [self resetTitleByChange:-signalPrice];
     }
     
 }
@@ -395,147 +436,67 @@
 {
     NSInteger row = [indexPath row];
     NSString *identifier = [NSString stringWithFormat:@"cell%ld", (long)row];
-    UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
-    if (cell != nil) {
-        UIFont *font = [UIFont fontWithName:@"Heiti SC Medium" size:30];
-        CGFloat baseWidth = (CGRectGetWidth(tableView.frame)-kMargin*2)/5;
-        CGFloat cellHeight = kTableRowHeight;
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    UITableViewCell *cell = nil;
+    
+    if (self.curIndexPath != nil && self.curIndexPath.row == row) {
+        cell = [[CPOrderEditCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier table:tableView delegate:self atRow:row];
+    }
+    else if (row == _maxRowNumbers-1 && _maxRowNumbers >= 1)
+    {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
+        CGFloat x = (CGRectGetWidth(tableView.frame) - kButtonWidth)/2;
+        CGFloat y = (kTableRowHeight-kButtonHeight)/2;
+        CGRect frame = CGRectMake(x, y, kButtonWidth, kButtonHeight);
+        _clearCellBgView = [[UIView alloc] initWithFrame:frame];
+        _clearCellBgView.backgroundColor = [UIColor clearColor];
+        _clearCellBgView.layer.cornerRadius = 3;
+        _clearCellBgView.tag = 1000;
         
-        CAShapeLayer *topLine = [CPCocoaSubViews lineLayerWithStartPoint:CGPointMake(kMargin, 0)
-                                endPoint:CGPointMake(CGRectGetWidth(tableView.frame)-kMargin, 0)
-                                width:kLineWidth
-                                color:[CPValueUtility colorWithR:0xD3 g:0xD3 b:0xD3 alpha:0.2]];
-        [cell.contentView.layer addSublayer:topLine];
         
-        CAShapeLayer *bottomLine = [CPCocoaSubViews
-                        lineLayerWithStartPoint:CGPointMake(kMargin, kTableRowHeight)
-                        endPoint:CGPointMake(CGRectGetWidth(tableView.frame)-kMargin, kTableRowHeight)
-                        width:kLineWidth
-                        color:[UIColor lightGrayColor]];
-        [cell.contentView.layer addSublayer:bottomLine];
+        [cell.contentView addSubview:_clearCellBgView];
+        [_clearCellBgView release];
         
-        if (self.curIndexPath != nil && self.curIndexPath.row == row) {
-            
-            UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(kMargin, 0, (CGRectGetWidth(tableView.frame)-kMargin*2), kTableRowHeight)];
-            bgView.backgroundColor = [CPValueUtility colorWithR:0xD3 g:0xD3 b:0xD3 alpha:0.3];
-            [cell.contentView addSubview:bgView];
-            [bgView release];
-            
-            
-            UIImage *deleteImage = [UIImage imageNamed:@"delete.png"];
-            UIImage *addImage = [UIImage imageNamed:@"add.png"];
-            UIImage *cutImage = [UIImage imageNamed:@"cut.png"];
-            
-            CGSize size = CGSizeMake(deleteImage.size.width / 14, deleteImage.size.height / 14);
-            CGPoint center = CGPointMake(CGRectGetWidth(tableView.frame)/2, kTableRowHeight/2);
-            CGRect deleteFrame = CGRectMake(0, 0, size.width, size.height);
-            CGRect cutFrame = CGRectMake(0, 0, size.width, size.height);
-            CGRect addFrame = CGRectMake(0, 0, size.width, size.height);
-            
-            UIButton *delete = [CPCocoaSubViews buttonWithFrame:deleteFrame
-                                                          title:nil
-                                                    normalImage:deleteImage
-                                                 highlightImage:nil
-                                                         target:self
-                                                         action:@selector(deleteAction:)];
-            delete.tag = row;
-            delete.center = CGPointMake(center.x - 200, center.y);
-            [cell.contentView addSubview:delete];
-            
-            UIButton *cut = [CPCocoaSubViews buttonWithFrame:cutFrame
-                                                       title:nil
-                                                 normalImage:cutImage
-                                              highlightImage:nil
-                                                      target:self
-                                                      action:@selector(cutAction:)];
-            cut.tag = row;
-            cut.center = center;
-            [cell.contentView addSubview:cut];
-            
-            UIButton *add = [CPCocoaSubViews buttonWithFrame:addFrame
-                                                          title:nil
-                                                    normalImage:addImage
-                                                 highlightImage:nil
-                                                         target:self
-                                                         action:@selector(addAction:)];
-            add.tag = row;
-            add.center = CGPointMake(center.x + 200, center.y);
-            [cell.contentView addSubview:add];
-            
-           
-            
-        }
-        else if (row == _maxRowNumbers-1 && _maxRowNumbers >= 1)
-        {
-            CGFloat x = (CGRectGetWidth(tableView.frame) - kButtonWidth)/2;
-            CGFloat y = (kTableRowHeight-kButtonHeight)/2;
-            CGRect frame = CGRectMake(x, y, kButtonWidth, kButtonHeight);
-            _clearCellBgView = [[UIView alloc] initWithFrame:frame];
-            _clearCellBgView.backgroundColor = [UIColor clearColor];
-            _clearCellBgView.layer.cornerRadius = 3;
-            _clearCellBgView.tag = 1000;
-            
-            
-            [cell.contentView addSubview:_clearCellBgView];
-            [_clearCellBgView release];
-            
-            _clearAllButton = [CPCocoaSubViews buttonWithFrame:frame title:@"清除订单" normalImage:nil highlightImage:nil target:self action:@selector(clearAllAction:)];
-            [_clearAllButton setTitleColor:[CPValueUtility colorWithR:0x00 g:0x80 b:0x00 alpha:1.0] forState:UIControlStateNormal];
-            
-            
-            [cell.contentView addSubview:_clearAllButton];
-            
-        }
-        else
-        {
-            NSInteger index = row;
-            if (self.curIndexPath!=nil) {
-                if (self.curIndexPath.row < self.orderList.count)
-                {
-                    if (row < self.curIndexPath.row) {
-                        index = row;
-                    }
-                    else if (row > self.curIndexPath.row)
-                    {
-                        index = row-1;
-                    }
-                }
-            }
-
-            NSDictionary *data = [self.orderList objectAtIndex:index];
-            NSString *nameString = [data objectForKey:kDBMenuName];
-            NSString *priceString = [data objectForKey:kGoodsTotalPrice];
-            NSString *numberString = [NSString stringWithFormat:@"X %@", [data objectForKey:kGoodsNumber]];
-            
-            
-            
-            CGRect nameFrame = CGRectMake(kMargin, 0, baseWidth*2, cellHeight);
-            UILabel *name = [CPCocoaSubViews labelWithFrame:nameFrame
-                                                       text:nameString
-                                                  alignment:NSTextAlignmentLeft
-                                                      color:[UIColor blackColor]
-                                                       font:font];
-            [cell.contentView addSubview:name];
-            
-            CGRect numberFrame = CGRectMake(baseWidth*2+kMargin, 0, baseWidth, cellHeight);
-            UILabel *number = [CPCocoaSubViews labelWithFrame:numberFrame
-                                                         text:numberString
-                                                    alignment:NSTextAlignmentCenter
-                                                        color:[UIColor blackColor]
-                                                         font:font];
-            [cell.contentView addSubview:number];
-            
-            CGRect priceFrame = CGRectMake(baseWidth*3+kMargin, 0, baseWidth*2, cellHeight);
-            UILabel *price = [CPCocoaSubViews labelWithFrame:priceFrame
-                                                        text:priceString
-                                                   alignment:NSTextAlignmentRight
-                                                       color:[UIColor blackColor]
-                                                        font:font];
-            [cell.contentView addSubview:price];
-        }
+        _clearAllButton = [CPCocoaSubViews buttonWithFrame:frame title:@"清除订单" normalImage:nil highlightImage:nil target:self action:@selector(clearAllAction:)];
+        [_clearAllButton setTitleColor:[CPValueUtility colorWithR:0x00 g:0x80 b:0x00 alpha:1.0] forState:UIControlStateNormal];
+        
+        
+        [cell.contentView addSubview:_clearAllButton];
         
     }
+    else
+    {
+        NSInteger index = row;
+        if (self.curIndexPath!=nil) {
+            if (self.curIndexPath.row < self.orderList.count)
+            {
+                if (row < self.curIndexPath.row) {
+                    index = row;
+                }
+                else if (row > self.curIndexPath.row)
+                {
+                    index = row-1;
+                }
+            }
+        }
+        
+        cell = [[CPOrderInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier content:[self.orderList objectAtIndex:index] table:tableView];
+    }
+
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    CAShapeLayer *topLine = [CPCocoaSubViews lineLayerWithStartPoint:CGPointMake(0, 0)
+                                                            endPoint:CGPointMake(CGRectGetWidth(tableView.frame), 0)
+                                                               width:kLineWidth
+                                                               color:[CPValueUtility colorWithR:0xD3 g:0xD3 b:0xD3 alpha:0.2]];
+    [cell.contentView.layer addSublayer:topLine];
+    
+    CAShapeLayer *bottomLine = [CPCocoaSubViews
+                                lineLayerWithStartPoint:CGPointMake(0, kTableRowHeight)
+                                endPoint:CGPointMake(CGRectGetWidth(tableView.frame), kTableRowHeight)
+                                width:kLineWidth
+                                color:[UIColor lightGrayColor]];
+    [cell.contentView.layer addSublayer:bottomLine];
     
     return cell;
 }
@@ -550,6 +511,7 @@
     [_orderTable reloadData];
     
     [self.delegate orderTotalPriceDidChange:INFINITY];
+    [self resetTitleByChange:INFINITY];
     [self.delegate orderManagerWillDismiss];
     _shouldClearAllRows = NO;
 }
@@ -564,7 +526,7 @@
 {
     BOOL ret = YES;
     
-    if (indexPath.row == self.curIndexPath.row) {
+    if (indexPath.row == self.curIndexPath.row && self.curIndexPath != nil) {
         ret = NO;
     }
     
@@ -572,52 +534,19 @@
         ret = NO;
     }
     
-    if (ret)
-    {
-        [self hideEditView];
-    }
-    
     return ret;
+}
+
+- (void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self hideEditView];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        NSMutableArray *deletaArray = [NSMutableArray array];
         NSInteger index = indexPath.row;
         NSIndexPath *deleteIndexPath = indexPath;
-//        if (self.curIndexPath != nil) {
-//            if (self.curIndexPath.row < self.orderList.count)
-//            {
-//                if (indexPath.row < self.curIndexPath.row - 1) {
-//                    deleteIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
-//                    [deletaArray addObject:deleteIndexPath];
-//                    NSIndexPath *newPath = [NSIndexPath indexPathForRow:self.curIndexPath.row-1 inSection:self.curIndexPath.section];
-//                    self.curIndexPath = newPath;
-//                    
-//                }
-//                else if (indexPath.row == self.curIndexPath.row - 1)
-//                {
-//                    [deletaArray addObject:self.curIndexPath];
-//                    self.curIndexPath = nil;
-//                }
-//                
-//                else if (indexPath.row > self.curIndexPath.row)
-//                {
-//                    index = indexPath.row-1;
-//                    deleteIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
-//                }
-//                
-//            }
-//            else
-//            {
-//                [deletaArray addObject:self.curIndexPath];
-//                self.curIndexPath = nil;
-//            }
-//            
-//        }
-        
         NSMutableDictionary *dic = [self.orderList objectAtIndex:index];
         CGFloat totalPrice = [[dic objectForKey:kGoodsTotalPrice] floatValue];
     
@@ -626,7 +555,7 @@
         [_orderTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:deleteIndexPath] withRowAnimation:UITableViewRowAnimationTop];
         [_orderTable endUpdates];
         [self.delegate orderTotalPriceDidChange:-totalPrice];
-        
+        [self resetTitleByChange:-totalPrice];
         if (self.orderList.count == 0) {
             self.curIndexPath = nil;
             [self.delegate orderManagerWillDismiss];
@@ -642,15 +571,20 @@
 {
     [self clearButtonCancelReady];
     
-    if (indexPath.row == _maxRowNumbers - 1) {
+    BOOL lastRow = indexPath.row == _maxRowNumbers - 1;
+    BOOL editRow = self.curIndexPath != nil && indexPath.row == self.curIndexPath.row;
+    
+    if (lastRow || editRow)
+    {
         return;
     }
     
     // 当前还未显示编辑行
     if (self.curIndexPath == nil) {
+        
         NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
         self.curIndexPath = nextIndexPath;
-        [self showEditView];
+        [self showEditViewAtIndexPath:self.curIndexPath];
     }
     else// 当前已显示编辑行
     {
@@ -660,18 +594,23 @@
             [self hideEditView];
         }
         // 2.当前选中其他行
-        else if (indexPath.row != self.curIndexPath.row && !priorRow)
+        else
         {
             NSInteger nowEditRow = self.curIndexPath.row;
             [self hideEditView];
+            
             NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
             self.curIndexPath = (indexPath.row < nowEditRow) ? nextIndexPath : indexPath;
-            [self showEditView];
+            [self showEditViewAtIndexPath:self.curIndexPath];
             
         }
+
         
-    [tableView scrollToRowAtIndexPath:self.curIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         
+    }
+    
+    if (self.curIndexPath != nil) {
+        [tableView scrollToRowAtIndexPath:self.curIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     }
 
 }
@@ -688,6 +627,31 @@
     _orderTable.userInteractionEnabled = YES;
 }
 
+
+#pragma mark - CPOrderEidtDelegate
+
+- (void)orderEditActionType:(CPOrderActionType)type
+{
+    switch (type) {
+        case CPOrderActionAdd:
+        {
+            [self addAction:nil];
+        }
+            break;
+        case CPOrderActionCut:
+        {
+            [self cutAction:nil];
+        }
+            break;
+        case CPOrderActionDelete:
+        {
+            [self deleteAction:nil];
+        }
+            break;
+        default:
+            break;
+    }
+}
 
 #pragma mark- gesture delegate
 

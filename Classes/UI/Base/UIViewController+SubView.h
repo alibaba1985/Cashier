@@ -10,10 +10,10 @@
 
 @interface UIViewController (MiddlePresentation)
 
-- (void)addMiddlePresentationView:(UIView *)view;
+- (void)showMiddlePresentationView:(UIView *)view;
 
 
-- (void)removeMiddlePresentationView:(UIView *)view;
+- (void)hideMiddlePresentationView:(UIView *)view;
 
 @end
 

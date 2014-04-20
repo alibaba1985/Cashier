@@ -5,13 +5,13 @@
 //  Created by liwang on 14-2-16.
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
-
+#include <stdlib.h>
 #import "CPGoodsCollection.h"
 #import "CPGoodsDetailCell.h"
 #import "CPConstDefine.h"
 #import "CPCocoaSubViews.h"
 #import "CPOrderMangerViewController.h"
-#include <stdlib.h>
+#import "CPDataBaseMacros.h"
 
 
 #define kGoodsFontSize  22

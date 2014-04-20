@@ -7,6 +7,7 @@
 //
 
 #import "CPBaseViewController.h"
+#import "CPOrderEditCell.h"
 
 
 @protocol CPOrderManagerDelegate <NSObject>
@@ -18,15 +19,16 @@
 
 
 
-@interface CPOrderMangerViewController : CPBaseViewController<UITableViewDataSource, UITableViewDelegate,UIGestureRecognizerDelegate>
+@interface CPOrderMangerViewController : CPBaseViewController<UITableViewDataSource, UITableViewDelegate,UIGestureRecognizerDelegate,CPOrderEditDelegate>
 {
     
 }
 
 @property(nonatomic, assign)id<CPOrderManagerDelegate> delegate;
 @property(nonatomic, retain)NSMutableArray *orderList;
+@property(nonatomic, retain)NSString *curTotalAmount;
 
-- (void)reloadOrdersViewWithOrders:(NSMutableArray *)array;
+- (void)reloadOrdersViewWithOrders:(NSMutableArray *)array totalAmount:(NSString *)totalAmount;
 
 - (void)cancelAction;
 

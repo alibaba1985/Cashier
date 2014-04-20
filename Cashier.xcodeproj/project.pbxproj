@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F28200D1903724F0093F6A4 /* CPOrderInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F28200C1903724F0093F6A4 /* CPOrderInfoCell.m */; };
+		0F2820121903A9B50093F6A4 /* CPOrderEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2820111903A9B50093F6A4 /* CPOrderEditCell.m */; };
 		0F2CDC6018FA807D0003F254 /* UIViewController+SubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2CDC5F18FA807D0003F254 /* UIViewController+SubView.m */; };
 		0F3F70DF1893AC52005D53B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3F70DE1893AC52005D53B9 /* CoreLocation.framework */; };
 		0F47D7D818AB099D001717EC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F47D7D718AB099D001717EC /* libsqlite3.dylib */; };
@@ -126,6 +128,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F28200B1903724F0093F6A4 /* CPOrderInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPOrderInfoCell.h; sourceTree = "<group>"; };
+		0F28200C1903724F0093F6A4 /* CPOrderInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPOrderInfoCell.m; sourceTree = "<group>"; };
+		0F28200F190375BF0093F6A4 /* CPDataBaseMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPDataBaseMacros.h; path = Macros/CPDataBaseMacros.h; sourceTree = "<group>"; };
+		0F2820101903A9B50093F6A4 /* CPOrderEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPOrderEditCell.h; sourceTree = "<group>"; };
+		0F2820111903A9B50093F6A4 /* CPOrderEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPOrderEditCell.m; sourceTree = "<group>"; };
 		0F2CDC5E18FA807D0003F254 /* UIViewController+SubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SubView.h"; sourceTree = "<group>"; };
 		0F2CDC5F18FA807D0003F254 /* UIViewController+SubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SubView.m"; sourceTree = "<group>"; };
 		0F3F70DE1893AC52005D53B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -339,6 +346,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F28200E190375700093F6A4 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				0F28200F190375BF0093F6A4 /* CPDataBaseMacros.h */,
+			);
+			name = Macros;
+			sourceTree = "<group>";
+		};
 		0FA93A00187AC03900A954CF = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +431,7 @@
 		BC22F64318FA61A100612BBB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0F28200E190375700093F6A4 /* Macros */,
 				BC22F66518FA61A100612BBB /* CPAppDelegate.h */,
 				BC22F66618FA61A100612BBB /* CPAppDelegate.m */,
 				BC22F64418FA61A100612BBB /* 3rdParty */,
@@ -749,6 +765,10 @@
 				BC22F77718FA6DED00612BBB /* CPGoodsInfoViewController.m */,
 				BC22F77818FA6DED00612BBB /* CPOrderMangerViewController.h */,
 				BC22F77918FA6DED00612BBB /* CPOrderMangerViewController.m */,
+				0F28200B1903724F0093F6A4 /* CPOrderInfoCell.h */,
+				0F28200C1903724F0093F6A4 /* CPOrderInfoCell.m */,
+				0F2820101903A9B50093F6A4 /* CPOrderEditCell.h */,
+				0F2820111903A9B50093F6A4 /* CPOrderEditCell.m */,
 			);
 			path = business;
 			sourceTree = "<group>";
@@ -954,6 +974,7 @@
 				BC22F73F18FA61A200612BBB /* main.m in Sources */,
 				BC22F70818FA61A200612BBB /* CPResourceManager.m in Sources */,
 				BC22F7A818FA6DED00612BBB /* CPViewAnimations.m in Sources */,
+				0F2820121903A9B50093F6A4 /* CPOrderEditCell.m in Sources */,
 				BC22F7BC18FA6DED00612BBB /* CPToast.m in Sources */,
 				BC21B57818FA72A300D927DC /* UIPlaceHolderTextView.m in Sources */,
 				BC21B57618FA72A300D927DC /* UIImageView+Padding.m in Sources */,
@@ -995,6 +1016,7 @@
 				BC22F6FE18FA61A200612BBB /* NSDate+RFC1123.m in Sources */,
 				BC22F7AE18FA6DED00612BBB /* CPOrderMangerViewController.m in Sources */,
 				BC22F7AB18FA6DED00612BBB /* CPBusinessViewController.m in Sources */,
+				0F28200D1903724F0093F6A4 /* CPOrderInfoCell.m in Sources */,
 				BC22F7B818FA6DED00612BBB /* CPGoodsDetailCell.m in Sources */,
 				BC22F7A518FA6DED00612BBB /* CPLoginViewController.m in Sources */,
 				BC21B57418FA72A300D927DC /* UIButton+UnionPay.m in Sources */,

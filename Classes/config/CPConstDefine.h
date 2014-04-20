@@ -38,6 +38,8 @@
 #define kTextFieldWidth    300
 #define kTextFieldHeight   44
 
+#define kOrderTableRowHeight 64
+
 
 //-----------------Function Const------------------
 #define FScreenWidth              [CPValueUtility screenWidth]
@@ -86,27 +88,4 @@
 #define kBtn_StartTry                       @"Btn_StartTry"
 
 
-// database
 
-// 1
-#define kDBID                    @"ID"
-#define kDBName                  @"ConfigName"
-#define kDBValue                 @"ItemValue"
-#define kDBText                  @"ItemText"
-#define kDBRemark                @"Remark"
-#define kDBCreateUser            @"CreateUser"
-#define kDBCreateTime            @"CreateTime"
-#define kDBUpdateUser            @"UpdateUser"
-#define kDBUpdateTime            @"UpdateTime"
-
-// 2
-
-#define kGoodsTotalPrice         @"GoodsTotalPrice"
-#define kGoodsNumber             @"GoodsNumber"
-
-#define kDBMenuNo                @"MenuNo"
-#define kDBMenuName              @"MenuName"
-#define kDBMenuType              @"MenuType"
-#define kDBImagePath             @"ImagePath"
-#define kDBSalePrice             @"SalePrice"
-#define kDBSaleUnit              @"SaleUnit"

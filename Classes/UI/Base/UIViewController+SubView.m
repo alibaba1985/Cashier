@@ -23,7 +23,7 @@
 
 
 
-- (void)addMiddlePresentationView:(UIView *)view
+- (void)showMiddlePresentationView:(UIView *)view
 {
     UIView *mask = [CPCocoaSubViews maskViewWithFrame:self.navigationController.view.bounds];
     mask.tag = kMaskViewTag;
@@ -54,7 +54,7 @@
     [middle removeFromSuperview];
 }
 
-- (void)removeMiddlePresentationView:(UIView *)view
+- (void)hideMiddlePresentationView:(UIView *)view
 {
     [view.layer addAnimation:[CPViewAnimations scaleAnimationFromValue:1.0 toValue:0.5 duration:kFastSystemAnimationDuration] forKey:@"transform.scale"];
     //[view.layer addAnimation:[CPViewAnimations opacityAnimationFromValue:0.5 toValue:0 durtion:kFastSystemAnimationDuration] forKey:@"opacity"];

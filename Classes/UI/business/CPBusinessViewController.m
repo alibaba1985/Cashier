@@ -15,6 +15,7 @@
 #import "UIViewController+SubView.h"
 #import "CPGoodsCategoryCell.h"
 #import "CPDataBaseManager.h"
+#import "CPDataBaseMacros.h"
 
 #define kClassScrollHeight  80
 
@@ -179,6 +180,7 @@
     CGRect carFrame = CGRectMake(FScreenWidth - kCarWidth - kCommMargin, CGRectGetMaxY(_goodsCollection.frame)+ kCommMargin, kCarWidth, kCarHeight);
     _shoppingCar = [CPCocoaSubViews buttonWithFrame:carFrame title:@"￥0.00" normalImage:[UIImage imageNamed:@"greenBtn.png"] highlightImage:[UIImage imageNamed:@"grayBtn.png"] target:self action:@selector(showOrderListAction:)];
     _shoppingCar.tag = 10000;
+    _shoppingCar.enabled = NO;
     //[_shoppingCar addTarget:self action:@selector(shoppingCarTouchDownAction:) forControlEvents:UIControlEventTouchDown];
     //[_shoppingCar addTarget:self action:@selector(shoppingCarTouchOutAction:) forControlEvents:UIControlEventTouchDragOutside];
     //[_shoppingCar addTarget:self action:@selector(shoppingCarTouchInAction:) forControlEvents:UIControlEventTouchDragInside];
@@ -281,14 +283,15 @@
     self.totalPrice = [NSString stringWithFormat:@"%.2f", curTotalPrice];
     NSString *title = [NSString stringWithFormat:@"￥%@", self.totalPrice];
     [_shoppingCar setTitle:title forState:UIControlStateNormal];
+    _shoppingCar.enabled = YES;
 }
 
 #pragma mark - Order
 
 - (void)showOrderManageView
 {
-    [self addMiddlePresentationView:self.orderNavigationController.view];
-    [self.orderManageVC reloadOrdersViewWithOrders:self.curOrderList];
+    [self showMiddlePresentationView:self.orderNavigationController.view];
+    [self.orderManageVC reloadOrdersViewWithOrders:self.curOrderList totalAmount:self.totalPrice];
 }
 
 - (void)hideOrderManageView
@@ -380,28 +383,9 @@
 - (void)orderManagerWillDismiss
 {
     
-    [self removeMiddlePresentationView:self.orderNavigationController.view];
-    return;
-    
-    _orderWillDismiss = YES;
-    [self.orderNavigationController.view.layer addAnimation:[self scaleDisappearAnimation] forKey:nil];
-    //[self.orderNavigationController.view.layer addAnimation:[self opacityAnimationFromValue:1 toValue:0] forKey:nil];
-    //[self.orderMaskView.layer addAnimation:[self opacityAnimationFromValue:0.6 toValue:0] forKey:nil];
+    [self hideMiddlePresentationView:self.orderNavigationController.view];
     
 }
 
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
-    if (_orderWillDismiss) {
-        [self.orderMaskView removeFromSuperview];
-        [self.orderNavigationController.view removeFromSuperview];
-    }
-    else
-    {
-        
-    }
-    
-}
 
 @end

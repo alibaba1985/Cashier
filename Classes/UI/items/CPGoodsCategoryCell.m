@@ -10,6 +10,7 @@
 #import "CPCocoaSubViews.h"
 #import "CPValueUtility.h"
 #import "CPConstDefine.h"
+#import "CPDataBaseMacros.h"
 
 @implementation CPGoodsCategoryCell
 @synthesize goodsCategory;
